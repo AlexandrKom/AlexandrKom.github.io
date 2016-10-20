@@ -136,44 +136,6 @@
 
     </section>
 
-	<div class="map">
-      <script type="text/javascript">
-	    function append_googleapis()
-	    {
-	      var script = document.createElement('script');
-	      script.type =   'text/javascript';
-	      script.src  =   'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
-	  	                'callback=initialize';
-	      document.body.appendChild(script);
-	    }
-	    function initialize(){
-	      // Настройки для карты
-	  	var centerLatLng = new google.maps.LatLng(34.7764761,-111.8629379);
-	  	var mapOptions = {
-	  		zoom: 10,
-	  		center: centerLatLng,
-	  		scrollwheel: false,
-	  		mapTypeId: google.maps.MapTypeId.ROADMAP
-	  	}
-	  	var map = new google.maps.Map(document.getElementById("google-map"), mapOptions);
-
-	  	google.maps.event.addListener(map, 'dblclick', function(event) {
-	  		if(directionsDisplay != null){
-	  			directionsDisplay.setMap(null);
-	  			directionsDisplay = null;
-	  			polyline.setMap(map);
-	  			marker.setMap(map);
-	  		}
-	  		map.setCenter(centerLatLng);
-	  	});
-	    }
-	    $(document).ready(function(){ append_googleapis(); });
-	  </script>
-
-      <div class="google-map" id="google-map"> </div>
-
-    </div>
-
   </main>
 
 
