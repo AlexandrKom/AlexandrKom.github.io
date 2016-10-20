@@ -1,0 +1,40 @@
+{
+  "name": "project",
+  "version": "0.1.0",
+  "private": true,
+  "description": "project",
+  "author": "Александр Ком",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com"
+  },
+  "bugs": {
+    "url": "https://github.com"
+  },
+  "homepage": "https://github.com",
+  "devDependencies": {
+    "autoprefixer": "6.4.1",
+    "browser-sync": "2.15.0",
+    "gulp": "3.9.1",
+    "gulp-plumber": "1.1.0",
+    "gulp-postcss": "6.2.0",
+    "gulp-sass": "2.3.2",
+    "@htmlacademy/editorconfig-cli": "0.0.7"
+  },
+  "scripts": {
+    "test": "editorconfig-cli",
+    "build": "gulp style",
+    "start": "gulp serve"
+  },
+  "editorconfig-cli": [
+    "*.html",
+    "*.json",
+    "*.js",
+    "js/**/*.js",
+    "img/**/*.svg",
+    "sass/**/*.{sass,scss}"
+  ],
+  "engines": {
+    "node": "6.5"
+  }
+}

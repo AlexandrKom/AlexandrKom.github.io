@@ -1,0 +1,15 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+
+
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline|Neucha');
+
+@mixin bungee {
+  font-family: 'Bungee Inline', cursive;
+}
+
+@mixin neucha {
+  font-family: 'Neucha', cursive;
+}
+

@@ -1,0 +1,46 @@
+/* syntax
+******************************************/
+
+.chapter h2 {
+  text-align: center;
+  line-height: 0;
+}
+
+h4 {
+  line-height: 0;
+}
+
+.syntax, .properties-order {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font: 17px/1.6 Helvetica,Arial,sans-serif;
+  color: #5a5a5a;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.syntax__description,
+.syntax__example {
+  padding: 0 10px;
+  width: 50%;
+}
+
+.syntax__example {
+  padding-top: 60px;
+  font-size: 14px;
+}
+
+.token.attr-name, .token.builtin, .token.char, .token.inserted, .token.selector, .token.string {
+  color: #690;
+}
+
+.token.boolean, .token.constant, .token.deleted, .token.number, .token.property, .token.symbol, .token.tag {
+  color: #905;
+}
+
+.token.function {
+  color: #DD4A68;
+}
+
+
+

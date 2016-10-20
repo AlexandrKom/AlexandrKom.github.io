@@ -1,0 +1,67 @@
+/* main-menu
+******************************************/
+
+.main-menu, .main-menu__items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.main-menu__logo {
+  width: 150px;
+  @include bungee;
+  padding: 0 30px;
+  line-height: 80px;
+  color: ghostwhite;
+
+  &::before {
+    content: '{';
+  }
+
+  &::after {
+    content: '}';
+  }
+
+  &::before, &::after {
+    font: normal 125%/1.4 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
+}
+
+.main-menu__items {
+  list-style-type: none;
+
+  & a {
+    line-height: 40px;
+    padding: 0 20px;
+    margin: 0 100px;
+    text-decoration: none;
+    color: aliceblue;
+  }
+}
+
+.main-menu__item::after {
+  content: "";
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 0%;
+  border-bottom-width: 1px;
+  margin-bottom: 11px;
+  border-bottom: 3px solid antiquewhite;
+}
+
+.main-menu__item:hover::after {
+  width: 50%;
+  transition: width 750ms ease 0s;
+}
+
+.main-menu__item--active::after {
+  content: "";
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 50%;
+  border-bottom-width: 1px;
+  margin-bottom: 11px;
+  border-bottom: 3px solid lightslategray;
+}

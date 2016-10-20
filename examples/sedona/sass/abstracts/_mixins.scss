@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------------------
+// all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+
+@mixin clear {
+  zoom:1; /* For IE 6/7 */
+  &:before,
+  &:after {
+    clear:both; content:"";
+    display:table;
+  }
+}
+
+@mixin box-sizing($param) {
+  -webkit-box-sizing: $param;
+  -moz-box-sizing: $param;
+  box-sizing: $param;
+}
+
+@mixin border-radius($size) {
+  -webkit-border-radius: $size;
+  -moz-border-radius: $size;
+  border-radius: $size;
+}

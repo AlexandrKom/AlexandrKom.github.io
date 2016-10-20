@@ -1,0 +1,81 @@
+/* works
+******************************************/
+
+.works {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.works__item {
+  position: relative;
+  display: block;
+  height: 265px;
+  width: 30%;
+
+  background: red;
+
+  &:first-of-type {
+    background: url(../img/pink.png) no-repeat center top;
+    background-color: #eeeeee;;
+  }
+
+  &:nth-of-type(2) {
+    background: url('../img/mishka.png') no-repeat center center;
+  }
+
+  &:nth-of-type(3) {
+    background: url('../img/modest.svg') no-repeat 82% 72%, url("../img/modest.png") no-repeat center;
+    margin-bottom: 5%;
+  }
+
+  &:nth-of-type(4) {
+    width: 45%;
+    margin-left: 0;
+    background: url('../img/sedona.png') no-repeat center;
+  }
+
+  &:nth-of-type(5) {
+    width: 45%;
+    margin: 0;
+    background: url('../img/nerds.png') no-repeat center;
+  }
+
+  &:hover .works__overlay{
+    opacity: 1;
+    transition: opacity 750ms ease 0s;
+  }
+
+  &:hover .works__overlay .works__deskription{
+    margin: 10% 3% 10% 3%;
+    transition: margin 750ms ease 0s;
+  }
+
+}
+
+.works__overlay {
+  background: rgba(14, 174, 222, 0.8) center center no-repeat;
+  height: 90%;
+  left: 5%;
+  opacity: 0;
+  position: absolute;
+  top: 5%;
+  width: 90%;
+  border-radius: 5px;
+}
+
+.works__deskription {
+  color: floralwhite;
+  margin: 15% 3% 10% 3%;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.works__year {
+  color: floralwhite;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+}

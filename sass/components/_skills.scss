@@ -1,0 +1,49 @@
+/* skills
+******************************************/
+
+.skills {
+  text-align: center;
+
+  ul {
+    padding: 0;
+  }
+
+  .img-overlay {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+
+    & h4 {
+      margin: 0px;
+      margin-top: 20px;
+      color: aliceblue;
+    }
+
+    & p {
+      font-weight: 600;
+      color: ghostwhite;
+    }
+  }
+
+  li {
+    position: relative;
+    display: inline-block;
+
+    &:hover .img-overlay {
+      opacity: 1;
+      transition: all 750ms ease 0.3s;
+      width: auto;
+      height: auto;
+      top: 7px;
+      left: 7px;
+      background: rgba(0, 139, 139, 0.8);
+      padding: 5px 15px;
+      border-radius: 10px;
+    }
+  }
+
+
+}

@@ -1,0 +1,131 @@
+/* main-menu
+******************************************/
+
+.main-menu__items {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+  & .main-menu__btn-close {
+    width: 30px;
+    height: 25px;
+    position: absolute;
+    top: 13px;
+    right: 20px;
+    content: "";
+    border: none;
+    font-size: 0;
+    background-color: transparent;
+  }
+}
+
+.main-menu__btn-close:before,
+.main-menu__btn-close:after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 25px;
+  height: 4px;
+  background-color: #fff;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
+.main-menu__btn-close:after {
+  transform: rotate(-45deg);
+}
+
+.main-menu__item {
+  height: 56px;
+  line-height: 54px;
+  text-align: center;
+  background-color: $nav-color;
+
+  & a {
+    text-decoration: none;
+    list-style-type: none;
+    color: $nav-text-color;
+    font-size: $base-font-size*1.285714+px;
+    font-weight: bold;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #669ec0;
+  }
+
+}
+
+.main-menu__btn-close {
+  display: block;
+ }
+
+.main-menu__item:not(:first-child) {
+  border-top: 1px solid #9ac2db;
+}
+
+.main-menu__item:not(:last-child) {
+  border-bottom: 1px solid #678fa8;
+}
+
+.main-menu__item:last-of-type {
+  height: 55px;
+  border-bottom: none;
+  box-shadow: inset 0 -1px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+//********* tablet 768px
+
+@media (min-width: 768px) {
+  .main-menu {
+    font-size: 0;
+  }
+
+  .main-menu__item {
+    display: inline-block;
+    font-size: 0;
+    background-color: #fff;
+    width: 20%;
+
+    & a {
+      font-size: $base-font-size+px;
+      color: #000;
+    }
+
+    .main-menu__btn-close {
+      display: none;
+    }
+
+    &:nth-child(2) {
+      margin-right: 20%;
+    }
+
+    &:last-of-type {
+      box-shadow: none;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    & a:hover {
+      color: #9ac2db;
+    }
+
+    }
+
+  .main-menu__item:not(:last-child),
+  .main-menu__item:not(:first-child) {
+      border: none;
+   }
+
+  .main-menu__btn-close {
+  display: none;
+  }
+
+  }
+
+

@@ -1,0 +1,10 @@
+// -----------------------------------------------------------------------------
+// Basic typography style for copy text
+// -----------------------------------------------------------------------------
+
+body {
+  font: normal $base-font-size+px / 1.4 $text-font-stack;
+  text-align: center;
+  text-transform: uppercase;
+  color: #333333;
+}

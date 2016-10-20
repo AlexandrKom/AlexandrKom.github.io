@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport"  content="width=device-width, inital-scale=1.0">
+    <title>HTML Academy: Седона</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+
+  <header class="page-header">
+
+    <nav class="main-menu  main-menu__closed" role="navigation">
+
+      <ul class="main-menu__items">
+        <li class="main-menu__item  main-menu__item--active"><a href="#">  Главная       </a></li>
+        <li class="main-menu__item"><a href="photo.html">                  Фото и видео  </a></li>
+        <li class="main-menu__item"><a href="form.html">                   Форма отзыва  </a></li>
+        <li class="main-menu__item"><a href="#">                           HTML academy  </a></li>
+        <button class="btn main-menu__btn-close">Скрыть меню</button>
+      </ul>
+
+    </nav>
+
+    <div class="page-header__mobile-panel">
+
+      <div class="page-header__logo"></div>
+      <button class="btn page-header__btn-open">Показать меню</button>
+
+    </div>
+
+  </header>
+
+
+  <main class="page-container" role="main">
+
+    <section class="intro" role="complementary">
+
+      <div class="intro__img"></div>
+      <div class="intro__description">
+        <h1 class="description__title" role="definition">Седона &#8211 небольшой  городок в Аризоне,  заслуживающий большего!</h1>
+        <p class="description__content">рассмотрим 5 причин по которым Седона круче, чем Гранд Каньон!</p>
+      </div>
+
+    </section>
+
+
+    <section class="reason  reason__decorative" role="region">
+      <div class="reason__wrapper-left">
+        <h1 class="reason__title">настоящий городок</h1>
+        <p class="reason__number">&#8211 №1 &#8211</p>
+        <p class="reason__content">Седона не атракцион для туристов, там течет своя жизнь</p>
+      </div>
+      <div class="reason__img real-city"></div>
+
+    </section>
+
+
+    <section class="features">
+
+      <article class="features__item housing" role="article">
+        <h2 class="features__title">Жильё</h2>
+        <p class="features__content">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+      </article>
+
+      <article class="features__item souvenirs" role="article">
+        <h2 class="features__title">Сувениры</h2>
+        <p class="features__content">Не только китайского, но и местного производства!</p>
+      </article>
+
+      <article class="features__item food" role="article">
+        <h2 class="features__title">Eда</h2>
+        <p class="features__content">Всегда заказывайте ФИРМЕННЫЙ БУРГЕР, Вы НЕ разочаруетесь!</p>
+      </article>
+
+    </section>
+
+
+    <section class="reason" role="region">
+
+      <div class="reason__wrapper-rigth">
+        <h1 class="reason__title">Там есть Мост дьявола</h1>
+        <p class="reason__number">&#8211 №2 &#8211</p>
+        <p class="reason__content">Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+      </div>
+      <div class="reason__img devils-bridge"></div>
+
+    </section>
+
+
+    <section class="reasons">
+
+      <section class="reason" role="region">
+
+        <h1 class="reason__title">Небольшая площадь</h1>
+        <p class="reason__number">— №3 —</p>
+        <p class="reason__content">Все достопримечательности находятся очень близко</p>
+
+      </section>
+
+
+      <section class="reason" role="region">
+
+        <h1 class="reason__title">Красивая дорога</h1>
+        <p class="reason__number">— №4 —</p>
+        <p class="reason__content">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+
+      </section>
+
+
+      <section class="reason" role="region">
+
+        <h1 class="reason__title">Мало туристов</h1>
+        <p class="reason__number">— №5 —</p>
+        <p class="reason__content">Большинство едет в гранд каньон и толпится там</p>
+
+      </section>
+
+    </section>
+
+
+    <section class="interesting" role="complementary">
+
+      <h1 class="interesting__title">Заинтересовались?</h1>
+      <p class="interesting__content">Укажите предполагаемые даты поездки и мы покажем вам лучшие предложения гостиниц в седоне</p>
+      <a class="btn  interesting__btn" href="#" role="button">Найти гостиницу</a>
+
+    </section>
+
+	<div class="map">
+      <script type="text/javascript">
+	    function append_googleapis()
+	    {
+	      var script = document.createElement('script');
+	      script.type =   'text/javascript';
+	      script.src  =   'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
+	  	                'callback=initialize';
+	      document.body.appendChild(script);
+	    }
+	    function initialize(){
+	      // Настройки для карты
+	  	var centerLatLng = new google.maps.LatLng(34.7764761,-111.8629379);
+	  	var mapOptions = {
+	  		zoom: 10,
+	  		center: centerLatLng,
+	  		scrollwheel: false,
+	  		mapTypeId: google.maps.MapTypeId.ROADMAP
+	  	}
+	  	var map = new google.maps.Map(document.getElementById("google-map"), mapOptions);
+
+	  	google.maps.event.addListener(map, 'dblclick', function(event) {
+	  		if(directionsDisplay != null){
+	  			directionsDisplay.setMap(null);
+	  			directionsDisplay = null;
+	  			polyline.setMap(map);
+	  			marker.setMap(map);
+	  		}
+	  		map.setCenter(centerLatLng);
+	  	});
+	    }
+	    $(document).ready(function(){ append_googleapis(); });
+	  </script>
+
+      <div class="google-map" id="google-map"> </div>
+
+    </div>
+
+  </main>
+
+
+  <footer class="page-footer" role="contentinfo">
+
+      <p class="page-footer__twit">#VISITSEDONA</p>
+      <div class="page-footer__social">
+        <a class="social__item social__item--tw" href="#">
+
+          <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17.5px" height="14.663px" fill="#fff" viewBox="0 0 17.5 14.663" enable-background="new 0 0 17.5 14.663" xml:space="preserve"><g id="W6EeEF_1_"><g><path fill-rule="evenodd" clip-rule="evenodd" d="M11.283,0.153c1.736-0.484,3.074,0.264,3.685,1.15 c0.694-0.225,1.372-0.47,2.072-0.69c-0.004,0.841-0.538,1.478-0.883,1.728C16.861,2.506,17.5,1.86,17.5,1.86 c-0.175,0.977-1.035,1.746-1.611,1.977C15.65,10.429,12.617,14.793,5.507,14.66c-0.538,0,0.077,0-0.46,0 c-0.422,0-4.29-0.45-5.047-1.843c2.341,0.192,4.011-0.412,4.835-1.15c-0.989-0.293-2.761-0.464-3.07-2.881 c0.362,0.105,0.583,0.223,1.228,0.117C1.757,8.067,0.385,7.366,0.461,5.218c0.294,0.319,1.1,0.523,1.381,0.461 c-0.725-0.235-2.03-3.281-0.921-4.836C2.794,2.655,4.769,4.364,8.29,4.528C8.506,2.288,9.461,0.788,11.283,0.153z"/></g></g></svg>
+
+        </a>
+        <a class="social__item social__item--fb" href="#">
+
+          <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="8.672px" height="18.944px" fill="#fff" viewBox="0 0 8.672 18.944" enable-background="new 0 0 8.672 18.944" xml:space="preserve"><path d="M6.275,3.356c0.799,0,1.599,0,2.398,0c0-1.119,0-2.237,0-3.356c-0.959,0-1.92,0-2.878,0C2.656,0.181,1.54,2.387,1.948,6.114 H0v3.518h1.959c0,3.104,0,6.208,0,9.312c1.279,0,2.559,0,3.837,0c0-3.104,0-6.208,0-9.312h2.857V6.114H5.787 C5.765,5.069,5.75,3.709,6.275,3.356z"/></svg>
+
+        </a>
+        <a class="social__item social__item--yb" href="#">
+
+          <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="19.979px" height="14.015px" fill="#fff" viewBox="0 0 19.979 14.015" enable-background="new 0 0 19.979 14.015" xml:space="preserve"><path d="M17.145,0H2.835C1.275,0,0,1.275,0,2.835v8.345c0,1.56,1.275,2.835,2.835,2.835h14.31c1.56,0,2.835-1.275,2.835-2.835V2.835 C19.979,1.275,18.704,0,17.145,0z M7.036,10.392V3.623l6.769,3.384L7.036,10.392z"/></svg>
+
+        </a>
+      </div>
+      <div class="page-footer__copyright">
+        <a class="page-footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">Разработано:
+
+        <svg class="logo-academy" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="26.943px" height="34.09px" viewBox="0 0 26.943 34.09" enable-background="new 0 0 26.943 34.09" xml:space="preserve"><path d="M13.62,0.017L13.472,0L0,1.412v24.661l13.473,8.017l13.43-7.99l0.042-0.025V1.412L13.62,0.017z M25.019,12.127L13.495,5.334 L13.494,5.23l-0.087,0.05l-0.088-0.056v0.109L1.925,12.118V3.147l11.548-1.212l11.547,1.212V12.127z M13.405,6.787L24.923,13.5 l-4.479,2.64l-7.093-4.221l-0.014,1.415l5.904,3.513l-0.86,0.507l-5.03-2.992l-0.014,1.415l3.827,2.275l-0.782,0.523l-3.031-1.787 l-0.014,1.413l1.853,1.091l-1.8,1.081L2.034,13.622L13.405,6.787z M1.925,15.127l11.411,6.791l0.016,1.044L5.41,18.234L5.395,19.65 l7.979,4.795l0.018,1.076l-7.973-4.74l-0.013,1.414l8.021,4.822l0.046,0.025l8.143-4.872l-0.011-5.177l3.415-2.036v10.021 L13.472,31.85L1.925,24.979V15.127z"/></svg>
+
+        </a>
+      </div>
+
+  </footer>
+
+  </body>
+</html>

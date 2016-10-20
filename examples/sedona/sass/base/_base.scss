@@ -1,0 +1,39 @@
+// -----------------------------------------------------------------------------
+// very basic styles.
+// -----------------------------------------------------------------------------
+
+* {
+  @include box-sizing(border-box);
+}
+*::before, *::after {
+  @include box-sizing(inherit);
+}
+
+body {
+  background-color: #fff;
+}
+
+@media (min-width: 1200px) {
+
+  body {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+h1, h2 {
+  font-size: $base-font-size*1.285714+px;
+  font-weight: 800;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a, a:hover {text-decoration: none; color: inherit;}
+
+img {vertical-align: middle}
+
+
+

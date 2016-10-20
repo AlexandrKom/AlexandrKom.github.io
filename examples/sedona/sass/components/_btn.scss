@@ -1,0 +1,55 @@
+/* buttons and any modifications
+******************************************/
+
+.btn {
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:focus {
+    outline:none;
+  }
+}
+
+
+.interesting__btn,
+.form-feedback__btn {
+  font-size: 21px;
+  line-height: 58px;
+  font-weight: 800;
+  color: #fff;
+  background-color: #81b3d2;
+
+  &:hover {
+    color: #fff;
+    background-color: #669ec0;
+  }
+}
+
+.interesting__btn {
+  display: block;
+}
+
+
+//********* tablet 768px
+
+@media (min-width: 768px) {
+
+  .interesting__btn{
+    margin: 0 20%;
+  }
+
+}
+
+
+//********* desktop 1000px
+@media (min-width: 1000px) {
+
+  .interesting__btn {
+    margin: 0 30%;
+  }
+
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nerds</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,100,500&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+    <link href="css/nerds__shop.css" rel="stylesheet" type="text/css">
+	<!-- <base href="http://barbershop-borodinski.ru/Chumakov/nerds/"> -->
+	<!-- Подключаем API  карт 2.x  -->
+<script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+<script type="text/javascript">
+        // Как только будет загружен API и готов DOM, выполняем инициализацию
+        ymaps.ready(init);
+ 
+        function init () {
+            // Создание экземпляра карты и его привязка к контейнеру с
+            // заданным id ("map")
+            var myMap = new ymaps.Map('map', {
+                    // При инициализации карты, обязательно нужно указать
+                    // ее центр и коэффициент масштабирования
+                    center: [56.315695,44.017063], // Нижний Новгород
+                    zoom: 15
+                });
+ 
+				// Создание метки 
+				var myPlacemark = new ymaps.Placemark(
+				// Координаты метки
+				[56.318190,44.026141] , {
+                    // Свойства
+                    // Текст метки
+                    hintContent: 'Оперный театр'
+                }, {
+                    iconImageHref: 'img/map_point.png', // картинка иконки
+                    iconImageSize: [231, 190], // размеры картинки
+                    iconImageOffset: [0, 0] // смещение картинки
+                    });     
+ 
+ 
+				// Добавление метки на карту
+				myMap.geoObjects.add(myPlacemark);
+ 
+ 
+        }
+    </script>
+	
+  </head>
+<body>
+  <div class="p-header">
+    <div class="p-header__navigation  clearfix  central-wrapper">
+      <a class="p-header__logo" href="" title="">
+        <img class="p-header__logo" src="img/logo__header.png" alt=""> </a>
+      <nav class="p-header__menu  clearfix">
+        <a href="index.html"> Студия </a>
+        <a href="#"> Клиенты </a>
+        <a class="active" href="#"> Магазин </a>
+        <a href=#""> Контакты </a>
+      </nav>
+      <a class="cart" href="#"> Корзина </a>
+    </div>
+    
+  </div>
+  
+  <div class="p-header__slider">
+    <div class="slider__shop  central-wrapper">
+      <h1 class="king-kong"> Добро пожаловать в магазин  готовых макетов </h1>
+    </div>
+  </div>
+  
+  <div class="content-shop  clearfix  central-wrapper">
+    
+    <div class="content-box__filter-price">
+	
+      <form class="form-price" action="" method="post">
+        
+        <span class="filter-price__title"> Стоимость: </span>
+        <div class="filter-price__interval"> 
+        </div>
+        
+        <div class="filter-price__interval-number">
+          <span class="interval-number__text"> От </span>
+          <input class="from" name="from" placeholder="0" type="text">
+          <span class="interval-number__text"> До </span>
+          <input class="to" name="to" placeholder="15 000" type="text">
+        </div>
+        
+        <div class="filter-price__radio">
+          <span class="filter-price__title"> Сетка: </span>
+          
+		  <label class="label__checkbox">
+		    <input type="radio" id="radio-1" name="price-radio" value="1" checked>
+			<span class="radio_img"> </span> Адаптивная  
+		  </label> 
+		  <label class="label__checkbox">
+		    <input type="radio" id="radio-1" name="price-radio" value="1" checked>
+			<span class="radio_img"> </span> Фиксированная  
+		  </label>
+		  <label class="label__checkbox">
+		    <input type="radio" id="radio-1" name="price-radio" value="1" checked>
+			<span class="radio_img"> </span> Резиновая  
+		  </label>
+		  
+        </div>
+        
+        <div class="filter-price__checkbox">
+          <span class="filter-price__title"> Особенности: </span>
+		  
+          <label class="label__checkbox">
+		    <input type="checkbox" name="slider" value="1" checked> 
+			<span class="checkbox_img"> </span> Слайдер 
+		  </label>
+		  <label class="label__checkbox">
+		    <input type="checkbox" name="slider" value="2"> 
+			<span class="checkbox_img"> </span> Блок преимуществ 
+		  </label>
+		  <label class="label__checkbox">
+		    <input type="checkbox" name="slider" value="3"> 
+			<span class="checkbox_img"> </span> Новости 
+		  </label>
+		  <label class="label__checkbox">
+		    <input type="checkbox" name="slider" value="4"> 
+			<span class="checkbox_img"> </span> Галерея 
+		  </label>
+		  <label class="label__checkbox">
+		    <input type="checkbox" name="slider" value="5"> 
+			<span class="checkbox_img"> </span> Корзина 
+		  </label>		  
+          
+        </div>
+        
+      </form>
+    </div>
+    
+    <div class="filter-categories">
+      <span class="filter-categories__title"> Сортировать: </span>
+      <a class="filter-categorie__item  filter-categorie__active" href=""> По цене: </a>
+      <a class="filter-categorie__item" href=""> По типу:</a>
+      <a class="filter-categorie__item" href=""> По функционалу:</a>
+      <a class="triangle-down  triangle-down__active" href=""> </a>
+      <a class="triangle-up" href=""> </a>
+    </div>
+    
+    <div class="content-box">
+      
+	  <div class="content-box__item">
+        <div class="item-image">
+		  <img src="pictures/aviator.jpg" class="content-box__item-img">
+        </div>
+		
+		<div class="content-box__item-price">
+          <p class="maket-price__title"> Aviator </p>
+          <p class="maket-price__text"> Интернет-магазин c<br> личным кабинетом </p>
+          <a class="btn btn__maket-price"> 10 000 Р. </a>
+        </div>		
+      </div>
+	  
+      <div class="content-box__item">
+        <div class="item-image">
+		  <img src="pictures/daybreak.jpg" class="content-box__item-img">
+        </div>
+		
+		<div class="content-box__item-price">
+          <p class="maket-price__title"> Sunset </p>
+          <p class="maket-price__text"> Интернет-магазин с<br> личным кабинетом </p>
+          <a class="btn btn__maket-price"> 10 000 Р. </a>
+        </div>		
+      </div>
+	  
+      <div class="content-box__item">
+        <div class="item-image">
+		  <img src="pictures/forte.jpg" class="content-box__item-img">
+        </div>
+		
+		<div class="content-box__item-price">
+          <p class="maket-price__title"> Forte </p>
+          <p class="maket-price__text"> Интернет-магазин с<br> личным кабинетом </p>
+          <a class="btn btn__maket-price"> 10 000 Р. </a>
+        </div>		
+      </div>
+	  
+      <div class="content-box__item">
+        <div class="item-image">
+		  <img src="pictures/modern.jpg" class="content-box__item-img">
+        </div>
+		
+		<div class="content-box__item-price">
+          <p class="maket-price__title"> Thai </p>
+          <p class="maket-price__text"> Интернет-магазин c <br> личным кабинетом </p>
+          <a class="btn btn__maket-price"> 10 000 Р. </a>
+        </div>		
+      </div>
+	  
+      <div class="content-box__item">
+        <div class="item-image">
+		  <img src="pictures/avenue.jpg" class="content-box__item-img">
+        </div>
+		
+		<div class="content-box__item-price">
+          <p class="maket-price__title"> Avenue </p>
+          <p class="maket-price__text"> Интернет-магазин <br> с личным кабинетом </p>
+          <a class="btn btn__maket-price"> 10 000 Р. </a>
+        </div>		
+      </div>
+	  
+      <div class="content-box__item">
+        <div class="item-image">
+		  <img src="pictures/dovetail.jpg" class="content-box__item-img">
+        </div>
+		
+		<div class="content-box__item-price">
+          <p class="maket-price__title"> Dovetail </p>
+          <p class="maket-price__text"> Интернет-магазин <br> с личным кабинетом </p>
+          <a class="btn btn__maket-price"> 10 000 Р. </a>
+        </div>		
+      </div>      
+      
+      <div class="content-box__paginator">
+        <a href="" class="btn  paginator-item  paginator-item--active"> 1 </a>
+        <a href="" class="btn  paginator-item"> 2 </a>
+        <a href="" class="btn  paginator-item"> 3 </a>
+        <a href="" class="btn  btn__content-shop"> Следующая </a>
+      </div>
+	  
+    </div>    
+  </div>
+  
+  <div class="map">
+  
+    <div id="map" style="width:auto; height:416px"></div>
+	
+    <div class="map__contacts">
+      <div class="contacts-box">
+        <h2 class="contacts__title"><b> NЁRDS </b> DESIGN STUDIO </h2>
+        <p class="contacts__text"> 350000, Краснодар, <br> ул. Головатого, 100 </p>
+        <p> тел. +7 (861) 275-75-75 </p>
+        <a class="btn btn__map" href=""> Напишите нам </a>
+      </div>	    
+    </div>
+	
+	
+    
+	<div class="form__write  clearfix">
+        <form class="form-message" action="" method="post">
+          <div class="form__write-name"> 
+            <h2> Ваше имя: </h2>
+            <input class="name" name="name" placeholder="Представьтесь, пожалуйста" type="text" > 
+          </div>
+          <div class="form__write-emal"> 
+            <h2> Ваш e-mail: </h2>
+            <input class="email" placeholder="Для отправки ответа" name="email" type="text"> 
+          </div>
+          <div class="form__write-message"> 
+            <h2> Текст письма: </h2>
+            <textarea> В свободной форме </textarea>
+            <input type="submit" value="Отправить" class="btn  btn__form__write-send">
+            <div class="btn  btn__form__write-cancel">Отмена</div>
+          </div>
+          </form>
+      </div>
+	  
+  </div>
+  
+  
+  <footer class="p-footer  clearfix  central-wrapper">
+    
+    <div class="social__list">
+      <a class="social__list-item  imem-vk" href=""> Мы ВКонтакте </a>
+      <a class="social__list-item  imem-fb" href=""> Мы в Facebook </a>
+      <a class="social__list-item  imem-inst" href=""> Мы в Инстаграм </a>
+    </div>
+    <div class="social__promo">
+      <p class="social__promo-title"> Давайте дружить </p>
+      <p class="social__promo-text"> Скидка 10% для друзей из социальных сетей </p>
+    </div>
+    
+  </footer>
+  
+</body>
+</html>
+  
+</body>
+</html>

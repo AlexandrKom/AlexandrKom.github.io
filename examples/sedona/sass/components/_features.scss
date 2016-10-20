@@ -1,0 +1,81 @@
+/* features
+******************************************/
+
+.features {
+  margin-bottom: 47px;
+}
+
+.features__item {
+  margin: 0 20px -6px 20px;
+  padding: 36px 5px 0 50px;
+  text-align: left;
+}
+
+.features__title {
+  color: #000;
+  margin-bottom: 17px;
+}
+
+.housing {
+  background: url(../img/icon-house.svg) no-repeat left 2px top 28px;
+  background-size: 38px 33px;
+}
+
+.souvenirs {
+  background: url(../img/icon-gift.svg) no-repeat left 6px top 27px;
+  background-size: 30px 35px;
+}
+
+.food {
+  background: url(../img/icon-burger.svg) no-repeat left -1px top 33px;
+  background-size: 38px 33px;
+}
+
+
+
+//********* tablet 768px
+
+@media (min-width: 768px) {
+
+  .features {
+    flex-direction: row;
+    min-height: 330px;
+    margin: 0;
+    font-size: 0;
+    display: flex;
+  }
+
+  .features__item {
+    display: inline-block;
+    vertical-align: top;
+    width: 100/3+%;
+    margin: 0 0 14px 0;
+    padding: 157px 20px 0 20px;
+    text-align: center;
+  }
+
+  .housing {
+    background: url(../img/icon-house.svg) no-repeat center top 60px;
+  }
+
+  .souvenirs {
+    background: url(../img/icon-gift.svg) no-repeat center top 60px;
+    order: 3;
+  }
+
+  .food {
+    background: url(../img/icon-burger.svg) no-repeat center top 60px;
+  }
+
+  .features__title {
+    font-size: $base-font-size*1.5+px;
+    margin-bottom: 21px;
+  }
+
+  .features__content {
+    padding: 0 25px;
+    line-height: 21px;
+    font-size: $base-font-size+px;
+  }
+
+}

@@ -1,0 +1,59 @@
+@charset 'UTF-8';
+
+// 1. Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+// 2. Vendors
+@import
+  'vendor/normalize';
+
+// 3. Base stuff
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography',
+  'base/helpers';
+
+// 4. Layout-related section
+@import
+  'layout/page-header';
+
+// 5. Components in section header
+@import
+  'components/main-menu',
+  'components/page-header__mobile-panel';
+
+// 4*1. Layout-related sections
+@import
+  'layout/page-container';
+
+// 5*1. Components in section page-container
+@import
+  'components/intro',
+  'components/reason',
+  'components/features',
+  'components/reasons',
+  'components/interesting',
+  'components/btn',
+  'components/map';
+// photo components
+@import
+  'components/photo',
+  'components/video';
+// form-fidback components
+@import
+  'components/form-feedback';
+
+// 4*2. Layout-related sections
+@import
+  'layout/page-footer';
+
+
+
+
+
+
+

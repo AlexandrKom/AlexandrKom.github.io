@@ -1,0 +1,116 @@
+/* FOOTER
+******************************************/
+
+
+.page-footer {
+  padding: 35px 0;
+}
+
+.page-footer__twit {
+  font-size: 21px;
+  line-height: 25px;
+  font-weight: bold;
+  margin-bottom: 38px;
+}
+
+.page-footer__social {
+  margin-left: -7px;
+  margin-bottom: 40px;
+}
+
+.page-footer__copyright {
+  line-height: 26px;
+}
+
+.social__item {
+  display: inline-block;
+  vertical-align: middle;
+  width: 47px;
+  height: 47px;
+  font-size: 0;
+  overflow: hidden;
+  background-color: #81b3d2;
+
+  &:last-child {
+
+  }
+}
+
+.social__item--tw {
+  padding-top: 16px;
+  padding-left: 2px;
+}
+
+.social__item--fb {
+  padding-top: 14px;
+}
+
+.social__item--yb {
+  padding-top: 17px;
+}
+
+.page-footer__copyright-link {
+  display: inline-block;
+  vertical-align: middle;
+  word-spacing: 5px;
+}
+
+.logo-academy {
+  vertical-align: middle;
+}
+
+
+//********* tablet 768px
+
+@media (min-width: 768px) {
+
+  .page-footer {
+    padding-top: 38px;
+    font-size: 0;
+  }
+
+  .page-footer__twit,
+  .page-footer__social,
+  .page-footer__copyright {
+    display: inline-block;
+    width: 100/3+%
+  }
+
+  .page-footer__twit{
+    padding-top: 10px;
+  }
+
+  .page-footer__social {
+    margin: 0;
+    padding-left: 5px;
+    vertical-align: top;
+  }
+
+  .social__item {
+    margin-right: 6px;
+  }
+
+  .page-footer__copyright {
+    letter-spacing: 0.3px;
+    padding-top: 6px;
+    vertical-align: top;
+  }
+
+  .page-footer__copyright-link {
+    margin-left: 7px;
+    letter-spacing: 0.3px;
+    font-size: $base-font-size+px;
+  }
+}
+
+//********* desktop 1000px
+
+@media (min-width: 1000px) {
+
+  .page-footer__copyright{
+    text-align: right;
+    padding-right: 42px;
+  }
+
+}
+

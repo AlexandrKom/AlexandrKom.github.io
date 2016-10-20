@@ -1,0 +1,551 @@
+/* form-feedback
+******************************************/
+
+.form-feedback fieldset {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 0;
+  padding: 17px 20px 5px 20px;
+  font-size: 0;
+}
+
+.form-feedback__title {
+  margin-bottom: 21px;
+  color: #000;
+}
+
+.form-feedback__item {
+  @include clear;
+  vertical-align: top;
+  margin-bottom: 20px;
+}
+
+.form-feedback__label {
+  display: block;
+  float: left;
+  text-align: left;
+  font-size: $base-font-size+px;
+  padding-top: 22px;
+  text-align: right;
+}
+
+.form-feedback__input[type="text"] {
+  display: block;
+  float: right;
+  width: 69%;
+}
+
+.form-feedback__item:first-of-type .form-feedback__label {
+  width: 18%;
+  text-align: left;
+}
+
+.form-feedback__item:first-of-type .form-feedback__input[type="text"] {
+  width: 82%;
+}
+
+.form-feedback__fieldset.introduce .form-feedback__title::after {
+  content: ', пожалуйста:';
+}
+
+
+// contacts
+
+.form-feedback__fieldset.contacts {
+   margin-bottom: 5px;
+}
+
+.form-feedback__fieldset.contacts  .form-feedback__title {
+  margin-bottom: 27px;
+}
+
+.form-feedback__fieldset.contacts  .form-feedback__label.form-feedback__input-tel::before {
+  content: 'Контактный';
+}
+
+.form-feedback input[type="text"], .form-feedback input[type="tel"], .form-feedback input[type="email"] {
+  border: none;
+  padding: 0 20px;
+  font-size: $base-font-size*1.285714+px;
+  line-height: 58px;
+  font-weight: 800;
+  color: #000;
+  text-transform: none;
+  background-color: #f2f2f2;
+}
+
+.form-feedback__input-tel,
+.form-feedback__input-email {
+  float: none;
+  text-indent: 20px;
+  margin-bottom: 10px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 57px;
+  height: 57px;
+  content: "";
+}
+
+.input-wrapper.tel::after {
+  background: url(../img/icon-phone.svg) no-repeat;
+  background-color: #e6e6e6;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.input-wrapper.email::after {
+  background: url(../img/icon-mail.svg) no-repeat;
+  background-color: #e6e6e6;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form-feedback__fieldset.contacts  .form-feedback__item,
+.form-feedback__fieldset.contacts  .form-feedback__label{
+  width: 100%;
+  padding: 0;
+}
+
+.form-feedback input[type="tel"],
+.form-feedback input[type="email"] {
+  width: 100%;
+}
+
+.form-feedback__input-email {
+  padding: 0;
+  margin-bottom: 13px;
+  line-height: 12px;
+  text-align: left;
+}
+
+.form-feedback__error--tel {
+  color: #ff5c5c;
+  font-family: "Times New Roman", serif;
+  text-transform: none;
+  font-size: $base-font-size+px;
+  padding-top: 9px;
+  text-align: left;
+  padding-left: 21px;
+  letter-spacing: 0.4px;
+}
+
+
+
+// radio & checkbox
+
+.form-feedback__label--radio,
+.form-feedback__label--checkbox{
+  display: block;
+  height: 55px;
+  margin-bottom: 13px;
+  text-align: left;
+  font-size: $base-font-size*1.285714+px;
+  font-weight: bold;
+  text-transform: none;
+}
+
+.form-feedback__label--checkbox{
+  margin-bottom: 25px;
+}
+
+.form-feedback__input--hidden {
+  display: none;
+}
+
+.form-feedback__radio-bg,
+.form-feedback__checkbox-bg{
+  display: inline-block;
+  height: 55px;
+  width: 55px;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+.form-feedback__fieldset.impression {
+   margin-bottom: 15px;
+}
+
+.form-feedback__fieldset.impression  .title {
+  margin-bottom: 26px;
+}
+
+.form-feedback__fieldset.impression  .form-feedback fieldset {
+  margin-bottom: 27px;
+}
+
+.form-feedback__fieldset.attraction {
+  padding: 18px 20px 0 20px;
+}
+
+//textarea
+
+.feedback-form__textarea {
+  width: 100%;
+  margin-bottom: 49px;
+  padding: 15px 20px;
+  resize: none;
+  font-size: $base-font-size*1.285714+px;
+  font-weight: 800;
+  line-height: 25px;
+  color: #000;
+  text-transform: none;
+  background-color: #f2f2f2;
+  border: none;
+}
+
+
+// btn
+
+.form-feedback__btn {
+  display: block;
+  margin: 0 20px;
+  margin-bottom: 38px;
+}
+
+
+
+//********* tablet 768px
+
+@media (min-width: 768px) {
+
+  // block position
+  .form-feedback {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 8%;
+  }
+
+  .form-feedback__fieldset.introduce {
+    order: 2;
+    width: 50%;
+  }
+
+  .form-feedback__fieldset.contacts {
+    order: 3;
+    width: 100%;
+  }
+
+  .form-feedback__fieldset.impression {
+    order: 1;
+    width: 50%;
+  }
+
+  .form-feedback__fieldset.attraction {
+    order: 4;
+    width: 100%;
+    margin-top: 62px;
+  }
+
+  .form-feedback__fieldset.emotions {
+    order: 5;
+    width: 100%;
+  }
+
+  .form-feedback__btn {
+    margin-left: 5px;
+    position: relative;
+    order: 6;
+    width: 50%;
+  }
+
+  // block style
+
+  .form-feedback__fieldset.impression {
+    padding: 17px 0 0 0;
+    border-top: none;
+    border-right: 1px solid #e5e5e5;
+
+    .form-feedback__title {
+      padding: 0px 0 0 7px;
+      margin: 0 0 59px 0;
+      text-align: left;
+      font-size: $base-font-size*1.5+px;
+      letter-spacing: 0px;
+    }
+
+    .form-feedback__label--radio {
+      padding-left: 7px;
+      margin-bottom: 23px;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+
+    .form-feedback__radio-bg {
+      margin-right: 16px;
+    }
+  }
+
+
+  .form-feedback__fieldset.introduce {
+    padding: 17px 7px 0 20px;
+    margin-bottom: 62px;
+    border-top: none;
+
+    .form-feedback__title {
+      padding-left: 38px;
+      margin-bottom: 56px;
+      text-align: left;
+      font-size: $base-font-size*1.5+px;
+      letter-spacing: 0px;
+
+      &::after{
+        content: ':';
+      }
+    }
+
+    .form-feedback__label {
+      padding-left: 37px;
+    }
+
+    .form-feedback__item:first-of-type .form-feedback__input{
+      width: 71%;
+    }
+
+    .form-feedback__item:not(:first-of-type) .form-feedback__input{
+      width: 59%;
+    }
+  }
+
+
+  .form-feedback__fieldset.contacts {
+    padding: 0 1%;
+    margin-bottom: 58px;
+    border-top: 1px solid #e5e5e5;
+
+    .form-feedback__title {
+      width: 350px;
+      margin: -15px auto 27px auto;
+      font-size: $base-font-size*1.5+px;
+      letter-spacing: 0px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .form-feedback__item:first-of-type {
+      position: relative;
+      margin-bottom: 31px;
+    }
+
+    .form-feedback__error--tel {
+      position: absolute;
+      top: -9px;
+      right: 0px;
+    }
+  }
+
+
+  .form-feedback__fieldset.attraction {
+    padding-top: 0;
+    font-size: 0;
+    margin-top: 0;
+    margin-bottom: 63px;
+
+
+    .form-feedback__title {
+      width: 350px;
+      margin: -29px auto 40px auto;
+      font-size: $base-font-size*1.5+px;
+      background: #fff;
+    }
+
+    .attraction__conteiner {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 17px;
+    }
+
+    .form-feedback__label--checkbox {
+      flex-basis: 35%;
+
+      &:nth-child(even) {
+        margin-left: 8%;
+      }
+    }
+  }
+
+
+  .form-feedback__fieldset.emotions {
+    padding: 17px 8px 5px 8px;
+    margin-bottom: 5px;
+
+    .form-feedback__title {
+      width: 350px;
+      margin: -32px auto 40px auto;
+      margin-bottom: 57px;
+      font-size: $base-font-size*1.5+px;
+      background: #fff;
+    }
+
+    .feedback-form__textarea {
+      padding-bottom: 18px;
+    }
+  }
+
+  .btn.form-feedback__btn {
+    position: relative;
+    width: 49%;
+    margin-left: 5px;
+    margin-bottom: 60px;
+
+    &::after {
+      display: block;
+      position: absolute;
+      content: '* — обязательные поля';
+      top: 0;
+      right: -100%;
+      color: #000;
+      font-size: $base-font-size+px;
+      font-weight: normal;
+    }
+  }
+}
+
+
+
+//********* desktop 1000px
+
+@media (min-width: 1000px) {
+
+  .form-feedback__fieldset.introduce {
+    padding-right: 24px;
+    margin-bottom: 60px;
+
+    .form-feedback__title {
+      padding-left: 58px;
+      letter-spacing: 0.27px;
+
+      &::after {
+        content: ', пожалуйста:';
+      }
+    }
+
+    .form-feedback__label {
+      text-align: right;
+    }
+
+    .form-feedback__item:first-of-type .form-feedback__input {
+      width: 76%;
+    }
+
+    .form-feedback__label {
+      padding-left: 60px;
+    }
+
+    .form-feedback__item:not(:first-of-type) .form-feedback__input {
+      width: 68%;
+    }
+  }
+
+  .form-feedback__fieldset.contacts {
+
+    margin-bottom: 47px;
+
+    .form-feedback__title {
+      margin-bottom: 73px;
+    }
+
+    .form-feedback__label.form-feedback__input-tel::before {
+      content: '';
+    }
+
+    .form-feedback__input-tel {
+      padding: 2px 0 0 13px;
+    }
+
+    .form-feedback__input-email {
+      padding: 24px 23px 0 0px;
+      text-indent: 0;
+    }
+
+    .form-feedback__item {
+      float: left;
+      display: flex;
+      align-items: center;
+      width: 50%;
+    }
+
+    .form-feedback__label {
+      width: auto;
+    }
+
+    .input-wrapper {
+
+      width: 64%;
+    }
+
+    .form-feedback__error--tel {
+      position: absolute;
+      top: -37px;
+      left: 20%;
+    }
+  }
+
+
+  .form-feedback__fieldset.impression {
+
+
+    .form-feedback__title {
+      padding-left: 81px;
+      letter-spacing: 0.22px;
+    }
+
+    .form-feedback__label--radio {
+      padding-left: 28px;
+    }
+  }
+
+  .form-feedback__fieldset.attraction {
+    font-size: 0;
+    margin-bottom: 75px;
+
+
+    .form-feedback__title {
+      margin: -26px auto 44px auto;
+      line-height: 26px;
+    }
+
+    .attraction__conteiner {
+      justify-content: space-between;
+    }
+
+    .form-feedback__label--checkbox {
+      flex-basis: auto;
+      margin: 0;
+
+      &:nth-child(even) {
+        padding-left: 0%;
+        margin: 0;
+      }
+
+      &:nth-child(odd) {
+        padding-left: 0%;
+        margin: 0;
+      }
+    }
+  }
+
+  .form-feedback__fieldset.emotions {
+    padding: 17px 26px 5px 23px;
+  }
+
+  .btn.form-feedback__btn {
+    width: 47.5%;
+    margin-left: 25px;
+    margin-bottom: 64px;
+  }
+
+}
