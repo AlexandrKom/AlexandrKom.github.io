@@ -2568,7 +2568,7 @@ html:not(.is_adaptive) .l-padding_left.l-padding_giant {
 }
 .b-career__parallax-wrapper {
   position: relative;
-  padding-bottom: 70px;
+  padding-bottom: 0;
 }
 .b-career__section-photo {
   display: block;
@@ -2580,7 +2580,7 @@ html:not(.is_adaptive) .l-padding_left.l-padding_giant {
   bottom: 0;
   z-index: 2;
   width: 100%;
-  padding: 15px 0 10px 0;
+  padding: 15px 0 0 0;
   background: #fff;
 }
 .b-career__promo-wrapper_margin_none {
