@@ -400,7 +400,7 @@ $( function() {
                 $section.css( {
                     backgroundImage    : 'url(' + $section.data('image') + ')',
                     backgroundSize     : 'cover',
-                    backgroundPosition : 'top center',
+                    backgroundPosition : 'center center',
                     height             : '540px',
                 } );
             } );
