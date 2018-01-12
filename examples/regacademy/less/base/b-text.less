@@ -1,0 +1,137 @@
+.b-text {
+    @bl: ~".b-text";
+
+    padding: 0;
+    margin: 0;
+    color: @text-color;
+    font: @font-normal;
+
+    .b-text-margin('normal');
+
+    // НОВЫЕ СТИЛИ
+    @text-sizes: 'small', 'normal', 'medium', 'large', 'big', 'huge', 'giant';
+
+    &_size {
+        .-(@i: length(@text-sizes)) when (@i > 0) {
+            @size: e( extract( @text-sizes, @i ) );
+            .b-text-size(@size);
+            .-((@i - 1));
+        } .-;
+
+        &_compact {
+            display: inline-block;
+            font: 15px/13px @face;
+        }
+    }
+
+    &_color {
+        &_invert {
+            color: @text-color-invert;
+        }
+
+        &_minor {
+            color: @text-color-minor;
+        }
+
+        &_error {
+            color: @text-color-error;
+        }
+
+        &_inherit {
+            color: inherit;
+        }
+    }
+
+    &_margin_none {
+        margin: 0;
+    }
+}
+
+.b-text-size(@size) {
+    &_@{size} {
+        font: ~"@{font-@{size}}";
+        .b-text-margin(@size);
+    }
+
+    &_@{size}-compact {
+        font: ~"@{font-@{size}-compact}";
+        .b-text-margin(@size);
+    }
+}
+
+.b-text-margin(@size) {
+    margin-bottom: ~"@{line-height-@{size}}";
+
+    &@{bl}_margin_top {
+        margin-top: ~"@{line-height-@{size}}";
+    }
+}
+
+.b-text {
+    @bl: ~".b-text";
+
+    padding: 0;
+    margin: 0;
+    color: @text-color;
+    font: @font-normal;
+
+    .b-text-margin('normal');
+
+    // НОВЫЕ СТИЛИ
+    @text-sizes: 'small', 'normal', 'medium', 'large', 'big', 'huge', 'giant';
+
+    &_size {
+        .-(@i: length(@text-sizes)) when (@i > 0) {
+            @size: e( extract( @text-sizes, @i ) );
+            .b-text-size(@size);
+            .-((@i - 1));
+        } .-;
+
+        &_compact {
+            display: inline-block;
+            font: 15px/13px @face;
+        }
+    }
+
+    &_color {
+        &_invert {
+            color: @text-color-invert;
+        }
+
+        &_minor {
+            color: @text-color-minor;
+        }
+
+        &_error {
+            color: @text-color-error;
+        }
+
+        &_inherit {
+            color: inherit;
+        }
+    }
+
+    &_margin_none {
+        margin: 0;
+    }
+}
+
+.b-text-size(@size) {
+    &_@{size} {
+        font: ~"@{font-@{size}}";
+        .b-text-margin(@size);
+    }
+
+    &_@{size}-compact {
+        font: ~"@{font-@{size}-compact}";
+        .b-text-margin(@size);
+    }
+}
+
+.b-text-margin(@size) {
+    margin-bottom: ~"@{line-height-@{size}}";
+
+    &@{bl}_margin_top {
+        margin-top: ~"@{line-height-@{size}}";
+    }
+}

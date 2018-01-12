@@ -1,0 +1,51 @@
+// -----------------------------------------------------------------------------
+// Basic typography style for copy text
+// -----------------------------------------------------------------------------
+
+@blh: @base-line-height;
+@bfs: @base-font-size;
+
+@font-size-tiny:        (round( 0.4 * @bfs ));                        // 6
+@font-size-small:       (round( 0.8 * @bfs ));                        // 12
+@font-size-normal:      @bfs;                                         // 15
+@font-size-medium:      (round( 1.3 * @bfs ));                        // 20
+@font-size-large:       (round( 1.6 * @bfs ));                        // 24
+@font-size-big:         (round( 2.13 * @bfs ));                       // 32
+@font-size-huge:        (round( 3.2 * @bfs ));                        // 48
+@font-size-giant:       (round( 4.8 * @bfs ));                        // 72
+
+@line-height-tiny:      (round( 0.5 * @blh ));                        // 12
+@line-height-small:     (round( 0.75 * @blh ));                       // 18
+@line-height-normal:    @blh;                                         // 24
+@line-height-medium:    (round( 1.25 * @blh ));                       // 30
+@line-height-large:     (round( 1.5 * @blh ));                        // 36
+@line-height-big:       (round( 1.75 * @blh ));                       // 42
+@line-height-huge:      (round( 2.5 * @blh ));                        // 60
+@line-height-giant:     (round( 3.5 * @blh ));                        // 84
+
+@line-height-tiny-compact:      (round( 0.25 * @blh ));               // 6
+@line-height-small-compact:     (round( 0.5 * @blh ));                // 12
+@line-height-normal-compact:    (round( 0.75 * @blh ));               // 18
+@line-height-medium-compact:    @blh;                                 // 24
+@line-height-large-compact:     (round( 1.25 * @blh ));               // 30
+@line-height-big-compact:       (round( 1.5 * @blh ));                // 36
+@line-height-huge-compact:      (round( 2.25 * @blh ));               // 54
+@line-height-giant-compact:     (round( 3.25 * @blh ));               // 78
+
+@font-tiny:         @font-size-tiny/@line-height-tiny @face;
+@font-small:        @font-size-small/@line-height-small @face;
+@font-normal:       @font-size-normal/@line-height-normal @face;
+@font-medium:       @font-size-medium/@line-height-medium @face;
+@font-large:        @font-size-large/@line-height-large @face;
+@font-big:          @font-size-big/@line-height-big @face;
+@font-huge:         @font-size-huge/@line-height-huge @face;
+@font-giant:        @font-size-giant/@line-height-giant @face;
+
+@font-tiny-compact:         @font-size-tiny/@line-height-tiny-compact @face;
+@font-small-compact:        @font-size-small/@line-height-small-compact @face;
+@font-normal-compact:       @font-size-normal/@line-height-normal-compact @face;
+@font-medium-compact:       @font-size-medium/@line-height-medium-compact @face;
+@font-large-compact:        @font-size-large/@line-height-large-compact @face;
+@font-big-compact:          @font-size-big/@line-height-big-compact @face;
+@font-huge-compact:         @font-size-huge/@line-height-huge-compact @face;
+@font-giant-compact:        @font-size-giant/@line-height-giant-compact @face;
