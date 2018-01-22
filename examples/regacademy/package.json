@@ -1,10 +1,9 @@
 {
-  "name": "",
+  "name": "REGAcademy",
   "version": "",
   "private": true,
-  "description": "",
-  "devDependencies": {
-    "@htmlacademy/editorconfig-cli": "1.x",
+  "description": "REG.​Academy",
+  "devDependencies": {    
     "autoprefixer": "7.1.x",
     "browser-sync": "2.18.x",
     "del": "^3.0.0",
@@ -18,13 +17,9 @@
     "gulp-svgo": "^1.2.5",
     "gulp-svgstore": "^6.1.0",
     "run-sequence": "^2.2.0",
-    "stylelint": "8.1.x",
-    "stylelint-config-htmlacademy": "0.1.x"
+    "stylelint": "8.1.x"    
   },
-  "scripts": {
-    "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint 'less/**/*.less' --syntax less",
-    "test": "npm run editorconfig && npm run stylelint",
+  "scripts": {      
     "build": "gulp build",
     "start": "npm run build && gulp serve"
   },

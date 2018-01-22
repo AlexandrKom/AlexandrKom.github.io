@@ -1,4 +1,9 @@
 .b-bg {
+    text-align: center;
+    .desktop({
+        text-align: left;
+    })
+
     &_career {
         &_intro {
             padding: 48px 6px;
@@ -21,12 +26,9 @@
             });
         }
 
-        &_img {
-            background-image: url('b-bg_career_img-1.svg');
-
-            .desktop({
-                padding: 35px 0;
-                
+        &_img {            
+            .desktop({                
+                padding: 35px 0;                
             });
         }
 
