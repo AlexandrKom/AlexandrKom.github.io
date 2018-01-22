@@ -1,0 +1,23 @@
+.b-dropdown {
+	@bl: ~"b-dropdown";
+
+	text-align: center;
+
+    .lg({
+        text-align: right;
+    });    
+    .desktop({
+        text-align: right;
+    });    
+
+	&__content {
+		display: none;
+		float: left;
+    	width: 100%;
+	}	
+	
+	&__check:checked + &__button + &__content {
+		display: block; 	    	    
+	    padding: 10px;
+	}	
+}
