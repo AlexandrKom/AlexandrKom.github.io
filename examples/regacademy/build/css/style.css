@@ -3876,7 +3876,7 @@ html:not(.is_adaptive) .l-hidden\@desktop {
   bottom: 0;
   z-index: 2;
   width: 100%;
-  padding: 22px 0 0 0;
+  padding: 46px 0 0 0;
   background: #fff;
 }
 .b-career__promo-wrapper_margin_none {
@@ -4057,7 +4057,7 @@ html:not(.is_adaptive) .b-informer-bordered__title-small {
 }
 @media screen and (min-width: 620px) {
   .b-informer-bordered__border-top {
-    padding: 136px 0 176px 0;
+    padding: 136px 20px 176px 20px;
   }
 }
 .b-informer-bordered__border {
@@ -5117,8 +5117,21 @@ html:not(.is_adaptive) .b-dropdown {
   display: none;
   float: left;
   width: 100%;
+  padding: 10px 12px;
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  .is_adaptive .b-dropdown__content {
+    padding: 10px 28px;
+  }
+}
+html:not(.is_adaptive) .b-dropdown__content {
+  padding: 10px 28px;
+}
+@media (min-width: 1024px) {
+  .is_adaptive .b-dropdown__content {
+    padding: 10px 28px;
+  }
 }
 .b-dropdown__check:checked + .b-dropdown__button + .b-dropdown__content {
   display: block;
-  padding: 10px;
 }
