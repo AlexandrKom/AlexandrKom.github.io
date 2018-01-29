@@ -1,0 +1,81 @@
+.b-bg {
+    text-align: center;
+    .desktop({
+        text-align: left;
+    })
+
+    &_career {
+        &_intro {
+            padding: 48px 6px;
+            text-align: center;
+        }
+
+        &_img-1,
+        &_img-2,
+        &_img-3,
+        &_img-4,
+        &_img-5,
+        &_img-6 {
+            padding: 230px 0 0 0;
+            background-position: center top;
+            background-size: 100% 200px;
+            background-repeat: no-repeat;
+
+            .desktop({
+                background-size: initial;
+            });
+        }
+
+        &_img {            
+            .desktop({                
+                padding: 35px 0;                
+            });
+        }
+
+        &_img-2 {
+            background-image: url('b-bg_career_img-2.svg');
+
+            .desktop({
+                padding: 0;
+                background-position: left top;
+            });
+        }
+
+        &_img-3 {
+            background-image: url('b-bg_career_img-3.svg');
+
+            .desktop({
+                padding: 40px 305px 105px 0;
+                margin-right: -15px;
+                background-position: right top;
+            });
+        }
+
+        &_img-4 {
+            background-image: url('b-bg_career_img-4.svg');
+
+            .desktop({
+                background-position: left 30px;
+                padding: 30px 0 90px 290px;
+            });
+        }
+
+        &_img-5 {
+            background-image: url('b-bg_career_img-5.svg');
+
+            .desktop({
+                background-position: right 20px;
+                padding: 35px 340px 110px 0;
+            });
+        }
+
+        &_img-6 {
+            background-image: url('b-bg_career_img-6.svg');
+
+            .desktop({
+                background-position: left top;
+                padding: 40px 0 105px 290px;
+            });
+        }
+    }
+}

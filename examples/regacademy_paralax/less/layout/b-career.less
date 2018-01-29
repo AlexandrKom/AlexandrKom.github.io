@@ -1,0 +1,98 @@
+.b-career {
+    
+    &__informer-border {
+        @media (max-width: 620px) {
+            padding-bottom: 48px;
+        }
+    }
+
+    &__informer-title {
+        .md({
+            font: @font-huge;
+        });
+        .xs({
+            font: @font-huge;
+        });
+    }
+
+    &__informer-description {
+        .xs_420({
+            font-size: @font-size-medium;
+        })
+    }
+
+    &__share-wrapper {
+       .xs({
+            padding: 0 20px;
+        });
+    }
+
+    &__button {
+        .xs_420({
+            margin: 40px auto 0 auto;
+            padding: 0 18px;
+            height: 48px;
+            line-height: 48px;
+            font-size: 18px;
+        })
+    }
+
+    &__parallax-wrapper {
+        position: relative;
+        padding-bottom: 0;
+    }
+
+    &__section-photo {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+
+    &__promo-wrapper {
+        position: relative;
+        bottom: 0;
+        z-index: 2;
+        width: 100%;
+        padding: 46px 0 0 0;
+        background: #fff;
+
+        &_margin_none {
+            margin: 0;
+        }
+    }
+
+    &__next-slide {
+        display: block;
+        height: 60px;
+        background-image: url('../img/b-career__next-slide.svg');
+        background-position: 50% 0;
+        background-repeat: no-repeat;
+        cursor: pointer;
+
+        &_style_career-intro {
+            height: 60px;
+        }
+    }
+
+    &__form-item {
+        padding: 0 0 24px 0;
+    }
+
+    &__popup {
+        max-width: 600px;
+    }
+
+    @slides: 1, 2, 3, 4, 5, 6, 7;
+
+    &__section_bg {
+        .-(@i: length(@slides)) when (@i > 0) {
+            @slide: e( extract( @slides, @i ) );
+
+            &_@{slide} {
+                background-image: url('b-career__section_bg_@{slide}.jpg');
+            }
+
+            .-((@i - 1));
+        } .-;
+    }
+}

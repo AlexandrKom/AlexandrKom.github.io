@@ -1,0 +1,203 @@
+.b-informer-bordered {
+    @bl: ~".b-informer-bordered";
+    @md-width: ~"screen and (min-width: 620px)";
+
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+    padding: 0;     
+    color: #fff;
+    text-align: center;
+    background: #13365b;
+
+    @media @lg{        
+        padding: 30px;        
+    };
+    @media @desktop{        
+        padding: 30px;        
+    };
+
+    &_style {
+        &_with-logo {
+            @{bl}__border-wrapper_pos_top {
+                margin: 0 0 -24px;
+            }
+
+            @{bl}__border-top {
+                border-top-color: transparent;
+            }
+
+            @{bl}__logo-wrapper {
+                width: 274px;
+                height: 25px;
+                padding: 0 28px;
+                margin-top: -3px;
+                background-position: center top;
+            }
+        }
+
+        &_thin {
+            @{bl}__border-top {
+                position: relative;
+                margin: 0 auto;
+                border-width: 15px;
+                border-bottom-color: #fc0;
+                text-align: left;
+            }
+
+            .desktop({
+                & @{bl}__border-top {
+                    padding-right: 70px;
+                    padding-left: 70px;
+                }
+            });
+        }
+
+        &_wide {
+            padding: 0;
+
+            @{bl}__border-top {
+                width: auto;
+                border-width: 24px;
+                border-bottom-color: #fc0;
+            }
+        }
+    }
+
+    &__title {
+        display: block;
+        margin: 0 0 20px;
+        font: bold @font-large-compact;
+
+        @media @md-width {
+            font: bold @font-giant-compact;
+
+            &_size {
+                &_50 {
+                    font-size: 50px;
+                    line-height: 54px;
+                }
+
+                &_48 {
+                    font-size: 48px;
+                    line-height: 48px;
+                }
+
+                &_32 {
+                    font-size: 32px;
+                    line-height: 32px;
+                }
+
+                &_huge-compact {
+                    font: bold @font-huge-compact;
+                }
+            }
+        }
+    }
+
+    &__title-left {
+        display: block;
+        font: @font-large-compact;
+        vertical-align: top;
+
+        @media @md-width {
+            display: inline-block;
+            margin-right: -24px;
+            font: @font-big-compact;
+        }
+    }
+
+    &__title-small {
+        display: inline-block;
+        font-weight: normal;
+        vertical-align: top;
+
+        @media @md-width {
+            font: @font-big-compact;
+        }
+
+        .desktop({
+            font-weight: bold;
+            font-size: 32px;
+            line-height: 36px;
+        });
+    }
+
+    &__description {
+        padding: 0;
+        margin: 0;
+        font: normal 24px/37px @face;
+
+        &_size {
+            &_20 {
+                font-size: 20px;
+                line-height: 28px;
+            }
+        }
+    }
+
+    &__main-button {
+        margin-top: 40px;
+    }
+
+    &__border-top {
+        padding: 72px 10px;
+        border: 20px solid #fc0;
+        
+        &_padding-bottom_medium {
+            padding-bottom: 56px;
+        }
+
+        @media @md-width {
+            padding: 136px 20px 176px 20px;
+        }
+    }
+
+    &__border {
+        display: table-cell;
+        width: 50%;
+        border-top: 20px solid #fc0;
+    }
+
+    &__border-wrapper {
+        display: table;
+        position: relative;
+        height: 20px;
+        margin-top: -20px;
+    }
+
+    &__share-wrapper {
+        display: table-cell;
+        padding: 0 30px;
+
+        & .b-share__wrapper {
+            position: relative;
+            top: 7px;  //из расчета высоты иконок 35px
+            margin-top: -15px;
+            white-space: nowrap;
+        }
+    }
+
+    &_bg_regacademy {
+        background: url('../img/pimgpsh_fullsize_distr.jpg') no-repeat top;
+        background-size: cover;
+    }
+
+    @media (max-width: 1080px) {
+        & .b-page__content-wrapper {
+            width: 85%;
+        }
+    }
+}
+
+.b-informer-bordered-bg() {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    content: '';
+}

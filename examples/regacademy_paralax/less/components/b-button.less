@@ -1,0 +1,548 @@
+@padding: 11px;
+
+.b-button {
+    @bl: ~".b-button";
+    @c-p: @button-color-primary;
+    @c-p-n: @button-color-primary-new;
+    @c-p-a: @button-color-primary-alternate;
+    @c-d: @button-color-default;
+    @c-i: @button-color-important;
+    @c-a: @button-color-action;
+    @c-l: @button-color-link;
+    @c-invert: @button-color-invert;
+
+    // background-color: transparent;
+    border: 0 none;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    white-space: nowrap;
+    border-radius: 3px;
+    font-weight: bold;
+    font-family: @face;
+    color: #fff;
+    text-align: center;
+    line-height: 16px; // delete!
+
+    user-select: none;
+    box-sizing: border-box;
+    .i-text__rendering(); // ?????????
+    transition: @transition-default;
+
+    &:hover,
+    &:active {
+        transition: @transition-default;
+    }
+
+    &[disabled],
+    &_state_disabled {
+        cursor: default !important;
+        opacity: 0.4;
+        transition: none;
+    }
+
+    &__icon-right {
+        margin-left: @indent-h-normal;
+    }
+
+    &__icon-left {
+        margin-right: @indent-h-normal;
+    }
+
+    &_transition_off {
+        transition: none;
+
+        &:hover,
+        &:active {
+            transition: none;
+        }
+    }
+
+    &_style_block {
+        display: block;
+        width: 100%;
+        // убрать
+        position: relative;
+        z-index: 0;
+    }
+
+    &_style_bordered {
+        border: 1px solid transparent;
+    }
+
+    &_bold_none {
+        font-weight: normal;
+    }
+
+    &_radius_none {
+        border-radius: 0;
+    }
+
+    &_font_base {
+        font-size: @font-size-normal !important;
+    }
+
+    &_size {
+        &_tiny {
+            padding: 0 0.25 * @blh;
+            height: 1 * @blh;
+            font-size: @font-size-small;
+            line-height: 1 * @blh;
+
+            .b-button-size-style(0.5 * @blh);
+        }
+
+        &_small {
+            padding: 0 0.5 * @blh;
+            height: floor(1.25 * @blh);
+            font-size: @font-size-normal;
+            line-height: floor(1.25 * @blh);
+
+            .b-button-size-style(0.5 * @blh);
+        }
+
+        &_normal {
+            padding: 0 0.5 * @blh;
+            height: 1.5 * @blh;
+            font-size: @font-size-normal;
+            line-height: 1.5 * @blh;
+
+            .b-button-size-style(0.5 * @blh);
+        }
+
+        &_medium {
+            padding: 0 @blh;
+            height: 2 * @blh;
+            font-size: @font-size-medium;
+            line-height: 2 * @blh;
+
+            .b-button-size-style(@blh);
+
+            &@{bl}_height_auto {
+                padding-top: 0.25 * @blh;
+                padding-bottom: 0.25 * @blh;
+                font-size: @font-size-normal;
+                line-height: @line-height-small;
+                height: auto;
+            }
+        }
+
+        &_medium-compact {
+            padding: 0 @blh;
+            height: 2 * @blh;
+            font-size: 18px;
+            line-height: 2 * @blh;
+
+            .b-button-size-style(@blh);
+        }
+
+        &_big {
+            padding: 0 1.5 * @blh;
+            height: 2.5 * @blh;
+            font-size: @font-size-medium;
+            line-height: 2.5 * @blh;
+
+            .b-button-size-style(1.5 * @blh);
+
+            &@{bl}_height_auto {
+                padding-top: 0.5 * @blh;
+                padding-bottom: 0.5 * @blh;
+                line-height: @line-height-normal;
+                height: auto;
+            }
+        }
+
+        &_huge {
+            padding: 0 1.5 * @blh;
+            height: 3 * @blh;
+            font-size: @font-size-big;
+            line-height: 3 * @blh;
+
+            .b-button-size-style(1.5 * @blh);
+
+            &@{bl}_height_auto {
+                padding-top: 0.25 * @blh;
+                padding-bottom: 0.25 * @blh;
+                font-size: @font-size-normal;
+                line-height: @line-height-normal;
+                height: auto;
+            }
+        }
+    }
+
+    &_color {
+        &_primary {
+            .b-button-color(@c-p);
+        }
+
+        &_primary-new {
+            .b-button-color(@c-p-n);
+        }
+        &_primary-alternate {
+            .b-button-color(@c-p-a);
+        }
+
+        &_invert {
+            color: @color-link-text;
+            background-color: @c-invert;
+
+            &:hover,
+            &@{bl}_state_hover {
+                .i-active-bg-color(@c-d, 3%);
+            }
+
+            &[disabled]:hover,
+            &@{bl}_state_disabled:hover {
+                background-color: @c-invert;
+            }
+        }
+
+        &_default {
+            background-color: @c-d;
+            color: @color-link-text;
+
+            &:not(@{bl}_hover_off):hover,
+            &:not(@{bl}_hover_off)&@{bl}_state_hover {
+                .i-hover-bg-color(@c-d, 2%);
+            }
+
+            &:active {
+                .i-active-bg-color(@c-d, 2%);
+
+                &.b-button_transition_off {
+                    .i-hover-bg-color(@c-d, 2%);
+                }
+            }
+
+            &[disabled],
+            &@{bl}_state_disabled {
+                &:active, &:hover {
+                    background-color: @c-d;
+                }
+            }
+
+            &-inverted {
+                color: #515151;
+
+                .i-hover-bg-color(@c-d, 2%);
+
+                &:not(@{bl}_hover_off):hover,
+                &:not(@{bl}_hover_off)&@{bl}_state_hover {
+                    background-color: @c-invert;
+                }
+
+                &:active {
+                     background-color: @c-invert;
+
+                    &.b-button_transition_off {
+                         background-color: @c-invert;
+                    }
+                }
+
+                &[disabled],
+                &@{bl}_state_disabled {
+                    &:active, &:hover {
+                        background-color: @c-invert;
+                    }
+                }
+            }
+
+
+            & .b-font-regicons {
+                color: #000;
+            }
+
+            & .b-button__text-overflow:after {
+                background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1), @c-d);
+            }
+
+            &:not(@{bl}_hover_off):hover .b-button__text-overflow:after {
+                background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1), lighten(@c-d, 2%));
+            }
+
+            &:active .b-button__text-overflow:after {
+                background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1), lighten(@c-d, 2%));
+            }
+
+            &[disabled] {
+                background-color: @c-d;
+            }
+        }
+
+        &_important {
+            .b-button-color(@c-i);
+        }
+
+        &_action {
+            .b-button-color(@c-a);
+        }
+
+        &_link {
+            .b-button-color(@c-l);
+        }
+
+        &_transparent {
+            background-color: transparent;
+            background-image: none;
+            color: #515151;
+
+            &:hover, &@{bl}_state_hover {
+                .i-hover-bg-color(@c-d, 2%);
+            }
+
+            &[disabled]:hover,
+            &@{bl}_state_disabled:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &_padding {
+        &_wide {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    &_icon {
+        &_shop-cart {
+            font-size: 16px;
+            font-weight: 400;
+            height: 36px;
+            line-height: 36px;
+            padding: 0;
+            vertical-align: top;
+            width: 40px;
+
+            & .b-font-regicons {
+                vertical-align: baseline;
+            }
+
+            & .b-button__notifier-paceholder {
+                top: -26px;
+            }
+
+            .desktop({
+                height: 30px;
+                line-height: 30px;
+            });
+        }
+
+        &_zoom {
+            color: #9c9c9c;
+            font-family: 'b-font-regicons_char';
+            font-size: 16px;
+            font-weight: 400;
+            height: 20px;
+            line-height: 20px;
+            padding: 0;
+            vertical-align: top;
+            width: 20px;
+
+            & .b-font-regicons {
+                vertical-align: baseline;
+            }
+        }
+
+        &_plus {
+            color: #00b05a;
+            font-family: 'b-font-regicons_char';
+            font-size: 20px;
+            font-weight: normal;
+            height: 20px;
+            line-height: 16px;
+            padding: 0;
+            width: 20px;
+
+            &:hover {
+                color: lighten(#00b05a, 5%);
+            }
+            &:active {
+                color: darken(#00b05a, 5%);
+            }
+            & .b-font-regicons {
+                vertical-align: baseline;
+            }
+        }
+
+        &_filter {
+            color: #515151;
+            font-family: 'b-font-regicons_char';
+            font-size: 20px;
+            font-weight: normal;
+            height: 20px;
+            line-height: 16px;
+            padding: 0;
+            width: 20px;
+
+            & .b-font-regicons {
+                vertical-align: baseline;
+            }
+        }
+
+        &_bid,
+        &_add,
+        &_docs {
+            font-family: 'b-font-regicons_char';
+            font-weight: normal;
+            height: 20px;
+            padding: 0;
+            width: 20px;
+
+            & .b-font-regicons {
+                vertical-align: baseline;
+            }
+        }
+
+        &_select-all {
+            color: #515151;
+            font-family: 'b-font-regicons_char';
+            font-size: 20px;
+            font-weight: normal;
+            height: 20px;
+            line-height: 16px;
+            padding: 0;
+            width: 20px;
+
+            & .b-font-regicons {
+                vertical-align: baseline;
+            }
+        }
+
+    }
+
+    &__text-overflow {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        text-overflow: clip;
+        vertical-align: top;
+        white-space: nowrap;
+        z-index: 1;
+
+        @{bl}_style_block & {
+            display: block;
+        }
+    }
+
+    &__text-overflow:after {
+        display: block;
+        width: 10px;
+        height: 100%;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 2;
+        content: ' ';
+    }
+
+    &__notifier {
+        color: #fff;
+        display: inline-block;
+        font: bold 12px/14px @face;
+        height: 14px;
+        min-width: 8px;
+        padding: 0 3px;
+        text-align: center;
+        text-decoration: none;
+        vertical-align: middle;
+        border-radius: 7px;
+
+        &_bg-color_red {
+            background-color: #eb4343;
+        }
+
+        &_bg-color_yellow {
+            background-color: yellow;
+            color: #000;
+        }
+    }
+
+    &__notifier-placeholder {
+        display: inline-block;
+        height: 14px;
+        position: relative;
+        top: -17px;
+        vertical-align: baseline;
+        text-decoration: none;
+        z-index: 1;
+
+        .desktop({
+            top: -14px;
+        });
+    }
+
+    &__notifier-absolute-wrapper {
+        position: absolute;
+        right: 0;
+        top: 0;
+        white-space: nowrap;
+        line-height: normal;
+
+        &_align_left {
+            right: -12px;
+        }
+    }
+
+    & .b-triangle {
+        &_down {
+            .i-triangle-down(4px);
+        }
+        &_right {
+            .i-triangle-right(0.4em);
+        }
+    }
+
+    &_style_block &__text-overflow + .b-triangle {
+        position: absolute;
+        right: @padding;
+        top: 50%;
+        margin-top: -2px;
+        z-index: 2;
+    }
+
+    @text-sizes: 'normal', 'medium', 'large';
+    &_text-size {
+        .-(@i: length(@text-sizes)) when (@i > 0) {
+            @size: e(extract(@text-sizes, @i));
+            .b-button-text-size(@size);
+            .-((@i - 1));
+        } .-;
+    }
+}
+
+.b-button-text-size(@size) {
+    &_@{size} {
+        font-size: ~"@{font-size-@{size}}";
+    }
+}
+
+.b-button-color(@color) {
+    background-color: @color;
+
+    &:hover, &@{bl}_state_hover {
+        .i-hover-bg-color(@color);
+    }
+
+    &:active {
+        .i-active-bg-color(@color);
+    }
+
+    &[disabled], &@{bl}_state_disabled {
+        background-color: @color;
+    }
+}
+.b-button-size-style(@size) {
+    &@{bl}_style {
+        &_narrow {
+            padding-left: @size / 2;
+            padding-right: @size / 2;
+        }
+        &_wide {
+            padding-left: @size * 1.5;
+            padding-right: @size * 1.5;
+        }
+    }
+}
+

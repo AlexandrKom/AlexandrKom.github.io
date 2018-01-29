@@ -1,0 +1,78 @@
+@margin-directs: top, right, bottom, left;
+@margin-sizes: none, tiny, small, normal, medium, large, big, huge, giant;
+@margin-sizes-all-directs: none, tiny, small, normal, medium;
+
+.l-margin {
+    @bl: ~".l-margin";
+
+    margin-bottom: 40px !important;
+
+    .l-margin-loop();
+
+    .lg({
+        .l-margin-loop(lg);
+    });
+
+    .desktop({
+        .l-margin-loop(desktop);
+    });
+}
+
+.l-margin-loop(@breakpoint: false) {
+
+    & when (@breakpoint = false) {
+        .l-margin-mixin(~"");
+    }
+
+    & when not (@breakpoint = false) {
+        .l-margin-mixin(~"\@@{breakpoint}");
+    }
+}
+
+.l-margin-mixin(@breakpoint) {
+
+    .-(@i: length( @margin-sizes-all-directs ) ) when (@i > 0) {
+        @size: e( extract( @margin-sizes-all-directs, @i ) );
+
+        &_all-@{size}@{breakpoint} {
+            margin: ~"@{indent-v-@{size}}";
+        }
+        .-( (@i - 1) );
+    } .-;
+
+    .for(@margin-directs); .-each(@direct) {
+        &_@{direct} {
+            .for(@margin-sizes); .-each(@size) {
+                &-@{size}@{breakpoint} {
+                    & when (@direct = top) {
+                        margin-@{direct}: ~"@{indent-v-@{size}}";
+                    }
+                    & when (@direct = bottom) {
+                        margin-@{direct}: ~"@{indent-v-@{size}}";
+                    }
+                    & when (@direct = left) {
+                        margin-@{direct}: ~"@{indent-h-@{size}}";
+                    }
+                    & when (@direct = right) {
+                        margin-@{direct}: ~"@{indent-h-@{size}}";
+                    }
+                }
+
+                &@{bl}_@{size} {
+                    & when (@direct = top) {
+                        margin-@{direct}: ~"@{indent-v-@{size}}";
+                    }
+                    & when (@direct = bottom) {
+                        margin-@{direct}: ~"@{indent-v-@{size}}";
+                    }
+                    & when (@direct = left) {
+                        margin-@{direct}: ~"@{indent-h-@{size}}";
+                    }
+                    & when (@direct = right) {
+                        margin-@{direct}: ~"@{indent-h-@{size}}";
+                    }
+                }
+            }
+        }
+    }
+}

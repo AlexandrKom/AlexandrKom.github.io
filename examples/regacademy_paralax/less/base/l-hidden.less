@@ -1,0 +1,21 @@
+.l-hidden {
+    display: none;
+
+    &\@mobile {
+        .is_adaptive & {
+            @media @mobile {
+                display: none !important;
+            }
+        }
+    }
+
+    &\@desktop {
+        @media @desktop {
+            display: none !important;
+        }
+
+        html:not(.is_adaptive) & {
+            display: none !important;
+        }
+    }
+}
