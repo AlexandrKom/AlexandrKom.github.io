@@ -5237,7 +5237,6 @@ html:not(.is_adaptive) .b-menu__width-wrapper {
   width: auto;
   min-width: 996px;
   max-width: 1042px;
-  height: 500px;
   margin: 0 auto;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -5250,7 +5249,6 @@ html:not(.is_adaptive) .b-menu__width-wrapper {
     width: auto;
     min-width: 996px;
     max-width: 1042px;
-    height: 500px;
     margin: 0 auto;
     -webkit-box-shadow: none;
             box-shadow: none;
