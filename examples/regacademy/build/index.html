@@ -9,7 +9,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/b-regacademy.js"></script>   
+    <script type="text/javascript" src="js/b-regacademy.js"></script>
+    <script src="js/parallax.min.js"></script>   
 
     <!--[if lt IE 9]>
       <script type="text/javascript" src="js/html5shiv.min.js">
@@ -18,22 +19,33 @@
   </head>
   <body>
 
-  <header class="b-header b-header_page_default">
+  <header class="b-header b-header_page_default" style="position: fixed;
+    z-index: 999;
+    width: 100%;">
     <div class="b-page__content-wrapper b-header__wrapper">
-      <div class="b-header__logo-wrapper">
+      <div class="b-header__logo-wrapper" style="display: inline-block">
         <a href="www.reg.ru" class="b-header__logo b-header__logo_site_ru" title="Логотип REG.RU">
           <div class="b-header__logo"></div>           
         </a>
       </div>
-    </div>
-  </header>
-  <main class="page-container" role="main">    
+      <nav style="display: inline-block">
+        <ul style="display: inline-block">
+          <li style="display: inline-block"><a href="#slide_1" class="">1</a></li>
+          <li style="display: inline-block"><a href="#slide_2" class="">2</a></li>
+          <li style="display: inline-block"><a href="#slide_3" class="">3</a></li>
+          <li style="display: inline-block"><a href="#slide_4" class="">4</a></li>
+      </nav>
+    </div>    
+  </header> 
+  <main class="page-container" role="main">
+  <div class="b-career__parallax-wrapper">
+  <div class="i-parallax-scroller">    
     <div class="b-regacademy">
       <div class="b-informer-bordered b-informer-bordered_bg_regacademy b-career__informer-bordered">
         <div class="b-informer-bordered__border-top b-career__informer-border">
           <h1 class="b-informer-bordered__title b-career__informer-title">REG.&#8203Academy</h1>
           <p class="b-informer-bordered__description b-career__informer-description">
-            &nbsp;это образовательный проект компании РЕГ.РУ.<br />В&nbsp;основе проекта находятся онлайн-стажировки и&nbsp;курсы, на&nbsp;которые может попасть любой желающий.
+            это образовательный проект компании РЕГ.РУ.<br />В&nbsp;основе проекта находятся онлайн-стажировки и&nbsp;курсы, на&nbsp;которые может попасть любой желающий.
           </p>
         </div>        
       </div>
@@ -41,7 +53,7 @@
         <div class="b-page__content-wrapper b-page__content-wrapper_style_indent">
           <div class="b-bg b-bg_career_intro">
             <strong class="b-title b-title_size_big">Мы&nbsp;создаем возможности&nbsp;— вы&nbsp;меняете мир!</strong>
-            <p class="b-text b-text_size_medium">Сейчас мы&nbsp;сотрудничаем с&nbsp;несколькими ВУЗами,<br /> студенты которых проходят онлайн-стажировку. <br />А&nbsp;также, на&nbsp;базе Самарского Университета мы&nbsp;планируем<br /> открыть оффлайн-курсы по&nbsp;нескольким направлениям.</p>
+            <p class="b-text b-text_size_medium">Сейчас мы&nbsp;сотрудничаем с&nbsp;несколькими ВУЗами,<br /> студенты которых проходят онлайн-стажировку. <br />А&nbsp;также, на&nbsp;базе Самарского Университета открыты оффлайн-курсы по&nbsp;нескольким направлениям.</p>
            </div>
         </div>
         <a href="#slide_1" class="b-career__next-slide b-career__next-slide_style_career-intro"></a>
@@ -140,7 +152,9 @@
         </div>
       </div>
 
-    </div>  
+    </div> 
+  </div>
+  </div> 
   </main>
 
   <div class="b-footer b-wrapper l-padding_bottom-medium" id="slide_3">

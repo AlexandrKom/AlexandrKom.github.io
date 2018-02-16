@@ -422,4 +422,11 @@ $( function() {
 
         return false;
     } );
+
+    $('.b-dropdown__button').click( function() {
+    	$(window).scroll( function() { $(window).resize(); } );
+    	console.log('$(window).resize();')
+    } );
+
+
 } );
