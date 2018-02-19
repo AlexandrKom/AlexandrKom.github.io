@@ -1,0 +1,93 @@
+.b-wrapper {
+    @bl: ~".b-wrapper";
+
+    background-color: @color-bg-default;
+
+    &_size {
+        &_small-h {
+            padding: @wrapper-h-small;
+
+            &@{bl}_type_sym {
+                padding: @wrapper-h-small-sym;
+            }
+
+            &@{bl}_type_wide {
+                padding: @wrapper-h-small-wide;
+            }
+        }
+
+        &_normal-h {
+            padding: @wrapper-h-normal;
+
+            &@{bl}_type_sym {
+                padding: @wrapper-h-normal-sym;
+            }
+        }
+
+        &_medium-h {
+            padding: @wrapper-h-medium;
+
+            &@{bl}_type_sym {
+                padding: @wrapper-h-medium-sym;
+            }
+        }
+
+        &_small-v {
+            padding: @wrapper-v-small;
+
+            &@{bl}_type_sym {
+                padding: @wrapper-v-small-sym;
+            }
+        }
+
+        &_normal-v {
+            padding: @wrapper-v-normal;
+
+            &@{bl}_type_sym {
+                padding: @wrapper-v-normal-sym;
+            }
+        }
+
+        &_medium-v {
+            padding: @wrapper-v-medium;
+
+            &@{bl}_type_sym {
+                padding: @wrapper-v-medium-sym;
+            }
+        }
+    }
+
+    @bg-colors: 'blue', 'dark-blue', 'light-blue', 'gray', 'gray-darker', 'invert', 'done', 'none', 'menu', 'default-darker', 'azure', 'gold', 'info', 'hint';
+
+    &_bg {
+        .-(@i: length(@bg-colors)) when (@i > 0) {
+            @color: e( extract( @bg-colors, @i ) );
+            .b-wrapper-bg(@color);
+            .-((@i - 1));
+        } .-;
+    }
+
+    &_padding {
+        &-top_none {
+            padding-top: 0;
+        }
+
+        &-right_none {
+            padding-right: 0;
+        }
+
+        &-bottom_none {
+            padding-bottom: 0;
+        }
+
+        &-left_none {
+            padding-left: 0;
+        }
+    }
+}
+
+.b-wrapper-bg(@color) {
+    &_@{color} {
+        background-color: ~"@{color-bg-@{color}}";
+    }
+}

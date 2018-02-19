@@ -1,0 +1,72 @@
+@padding-directs: top, right, bottom, left;
+@padding-sizes: none, tiny, small, normal, medium, large, big, huge, giant;
+@padding-sizes-all-directs: none, tiny, small, normal, medium;
+
+.l-padding {
+    @bl: ~".l-padding";
+
+    .l-padding-loop();
+
+    .desktop({
+        .l-padding-loop(desktop);
+    });
+}
+
+.l-padding-loop(@breakpoint: false) {
+
+    & when (@breakpoint = false) {
+        .l-padding-mixin(~"");
+    }
+
+    & when not (@breakpoint = false) {
+        .l-padding-mixin(~"\@@{breakpoint}");
+    }
+}
+
+.l-padding-mixin(@breakpoint) {
+
+    .-(@i: length( @padding-sizes-all-directs ) ) when (@i > 0) {
+        @size: e( extract( @padding-sizes-all-directs, @i ) );
+
+        &_all-@{size}@{breakpoint} {
+            padding: ~"@{indent-v-@{size}}";
+        }
+        .-( (@i - 1) );
+    } .-;
+
+    .for(@padding-directs); .-each(@direct) {
+        &_@{direct} {
+            .for(@padding-sizes); .-each(@size) {
+                &-@{size}@{breakpoint} {
+                    & when (@direct = top) {
+                        padding-@{direct}: ~"@{indent-v-@{size}}";
+                    }
+                    & when (@direct = bottom) {
+                        padding-@{direct}: ~"@{indent-v-@{size}}";
+                    }
+                    & when (@direct = left) {
+                        padding-@{direct}: ~"@{indent-h-@{size}}";
+                    }
+                    & when (@direct = right) {
+                        padding-@{direct}: ~"@{indent-h-@{size}}";
+                    }
+                }
+
+                &@{bl}_@{size} {
+                    & when (@direct = top) {
+                        padding-@{direct}: ~"@{indent-v-@{size}}";
+                    }
+                    & when (@direct = bottom) {
+                        padding-@{direct}: ~"@{indent-v-@{size}}";
+                    }
+                    & when (@direct = left) {
+                        padding-@{direct}: ~"@{indent-h-@{size}}";
+                    }
+                    & when (@direct = right) {
+                        padding-@{direct}: ~"@{indent-h-@{size}}";
+                    }
+                }
+            }
+        }
+    }
+}

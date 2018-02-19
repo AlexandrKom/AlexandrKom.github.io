@@ -1,0 +1,40 @@
+.b-navigation {
+	@bl: ~"b-navigation";
+
+    position: fixed;
+    top: 50%;
+    right: 16px;
+    margin-top: -40px;
+    z-index: 5;
+    background: yellow;
+    width: 50px;
+
+    &__wrapper {
+	    margin: 0;
+	    padding: 0;
+	    border: 0;
+	    font-size: 0;
+	    font: inherit;
+	    vertical-align: baseline;
+    	list-style: none;
+    }
+
+    &__item {
+    	display: block;
+        height: 60px;        
+        background-position: 50% 0;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+    &__title {
+    	position: absolute;
+    	right: 22px;
+	    top: -7px;
+	    display: none;
+	    padding: 4px 20px 4px 7px;
+	    color: #fff;
+	    white-space: nowrap;
+	    background: transparent url(../img/nav-arrow.png) 100% 50% no-repeat;
+    }
+}

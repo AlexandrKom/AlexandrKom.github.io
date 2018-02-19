@@ -1,0 +1,502 @@
+// mobile mixins
+.desktop(@rules, @mediaclass: ~"") {
+    html:not(.is_adaptive) & {
+        @rules();
+    }
+
+    & when (@mediaclass = ~"") {
+        .is_adaptive & {
+            @media @desktop {
+                @rules();
+            }
+        }
+    }
+
+    & when (iskeyword(@mediaclass)) {
+        .is_adaptive &\@@{mediaclass} {
+            @media @desktop {
+                @rules();
+            }
+        }
+    }
+}
+
+.mobile(@rules, @mediaclass: ~"") {
+
+    & when (@mediaclass = ~"") {
+        .is_adaptive & {
+            @media @mobile {
+                @rules();
+            }
+        }
+    }
+
+    & when (iskeyword(@mediaclass)) {
+        .is_adaptive &\@@{mediaclass} {
+            @media @mobile {
+                @rules();
+            }
+        }
+    }
+}
+
+.xs(@rules, @mediaclass: ~"") {
+    & when (@mediaclass = ~"") {
+        .is_adaptive & {
+            @media @xs {
+                @rules();
+            }
+        }
+    }
+
+    & when (iskeyword(@mediaclass)) {
+        .is_adaptive &\@@{mediaclass} {
+            @media @xs {
+                @rules();
+            }
+        }
+    }
+}
+
+.xs_420(@rules, @mediaclass: ~"") {
+    & when (@mediaclass = ~"") {
+        .is_adaptive & {
+            @media @xs-420 {
+                @rules();
+            }
+        }
+    }
+
+    & when (iskeyword(@mediaclass)) {
+        .is_adaptive &\@@{mediaclass} {
+            @media @xs-420 {
+                @rules();
+            }
+        }
+    }
+}
+
+.md(@rules, @mediaclass: ~"") {
+
+    & when (@mediaclass = ~"") {
+        .is_adaptive & {
+          @media @md {
+              @rules();
+          }
+        }
+    }
+
+    & when (iskeyword(@mediaclass)) {
+        .is_adaptive &\@@{mediaclass} {
+            @media @md {
+                @rules();
+            }
+        }
+    }
+}
+
+.md_420(@rules, @mediaclass: ~"") {
+    & when (@mediaclass = ~"") {
+        .is_adaptive & {
+            @media @md-420 {
+                @rules();
+            }
+        }
+    }
+
+    & when (iskeyword(@mediaclass)) {
+        .is_adaptive &\@@{mediaclass} {
+            @media @md-420 {
+                @rules();
+            }
+        }
+    }
+}
+
+.lg(@rules, @mediaclass: ~"") {
+
+    & when (@mediaclass = ~"") {
+        .is_adaptive & {
+          @media @lg {
+              @rules();
+          }
+        }
+    }
+
+    & when (iskeyword(@mediaclass)) {
+        .is_adaptive &\@@{mediaclass} {
+            @media @lg {
+                @rules();
+            }
+        }
+    }
+}
+
+.desktop-1024(@rules, @mediaclass: ~"") {
+
+    & when (@mediaclass = ~"") {
+        .is_adaptive & {
+          @media @desktop-1024 {
+              @rules();
+          }
+        }
+    }
+
+    & when (iskeyword(@mediaclass)) {
+        .is_adaptive &\@@{mediaclass} {
+            @media @desktop-1024 {
+                @rules();
+            }
+        }
+    }
+}
+
+.desktop-1280(@rules, @mediaclass: ~"") {
+
+    & when (@mediaclass = ~"") {
+        .is_adaptive & {
+          @media @desktop-1280 {
+              @rules();
+          }
+        }
+    }
+
+    & when (iskeyword(@mediaclass)) {
+        .is_adaptive &\@@{mediaclass} {
+            @media @desktop-1280 {
+                @rules();
+            }
+        }
+    }
+}
+
+.desktop-1366(@rules, @mediaclass: ~"") {
+
+    & when (@mediaclass = ~"") {
+        .is_adaptive & {
+          @media @desktop-1366 {
+              @rules();
+          }
+        }
+    }
+
+    & when (iskeyword(@mediaclass)) {
+        .is_adaptive &\@@{mediaclass} {
+            @media @desktop-1366 {
+                @rules();
+            }
+        }
+    }
+}
+
+.i-create-media-class(@mediaclass, @rules) {
+
+    & when (@mediaclass = xs) {
+        .xs(@rules, xs);
+    }
+
+    & when (@mediaclass = md) {
+        .md(@rules, md);
+    }
+
+    & when (@mediaclass = mobile) {
+        .mobile(@rules, mobile);
+    }
+
+    & when (@mediaclass = desktop) {
+        .desktop(@rules, desktop);
+    }
+}
+
+
+.i-text__hidden () {
+    font: 0/0 a !important;
+    text-shadow: none;
+    color: transparent !important;
+}
+.i-text__rendering () {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased; // subpixel-antialiased looks ugly in Chrome
+    text-rendering: optimizeLegibility;
+}
+.i-text__font-boost-fix () {
+    max-height: 999999px; /* prevent font boosting on mobile device */
+}
+.i-text__size-adjust (@size: 100%) {
+    -webkit-text-size-adjust: @size;
+    -moz-text-size-adjust: @size;
+    -ms-text-size-adjust: @size;
+    text-size-adjust: @size;
+}
+
+// --------------------------------------------------
+// Flexbox LESS mixins
+// The spec: http://www.w3.org/TR/css3-flexbox
+// --------------------------------------------------
+
+// https://gist.github.com/jayj/4012969
+// Flexbox display
+// flex or inline-flex
+.i-flex-display(@display: flex) {
+    display: ~"-webkit-@{display}";
+    display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+    display: ~"-ms-@{display}"; // IE11
+    display: @display;
+}
+
+// The 'flex' shorthand
+// - applies to: flex items
+// <positive-number>, initial, auto, or none
+.i-flex(@columns: initial) {
+    -webkit-flex: @columns;
+    -ms-flex: @columns;
+    flex: @columns;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row | row-reverse | column | column-reverse
+.i-flex-direction(@direction: row) {
+    -webkit-flex-direction: @direction;
+    -ms-flex-direction: @direction;
+    flex-direction: @direction;
+}
+
+// Flex Line Wrapping
+// - applies to: flex containers
+// nowrap | wrap | wrap-reverse
+.i-flex-wrap(@wrap: nowrap) {
+    -webkit-flex-wrap: @wrap;
+    -ms-flex-wrap: @wrap;
+    flex-wrap: @wrap;
+}
+
+// Flex Direction and Wrap
+// - applies to: flex containers
+// <flex-direction> || <flex-wrap>
+.i-flex-flow(@flow) {
+    -webkit-flex-flow: @flow;
+    -ms-flex-flow: @flow;
+    flex-flow: @flow;
+}
+
+// Display Order
+// - applies to: flex items
+// <integer>
+.i-flex-order(@order: 0) {
+    -webkit-order: @order;
+    -ms-order: @order;
+    order: @order;
+}
+
+// Flex grow factor
+// - applies to: flex items
+// <number>
+.i-flex-grow(@grow: 0) {
+    -webkit-flex-grow: @grow;
+    -ms-flex-grow: @grow;
+    flex-grow: @grow;
+}
+
+// Flex shrink
+// - applies to: flex item shrink factor
+// <number>
+.i-flex-shrink(@shrink: 1) {
+    -webkit-flex-shrink: @shrink;
+    -ms-flex-shrink: @shrink;
+    flex-shrink: @shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// - applies to: flex itemsnitial main size of the flex item
+// <width>
+.i-flex-basis(@width: auto) {
+    -webkit-flex-basis: @width;
+    -ms-flex-basis: @width;
+    flex-basis: @width;
+}
+
+// Axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around
+.i-justify-content(@justify: flex-start) {
+    -webkit-justify-content: @justify;
+    -ms-justify-content: @justify;
+    -ms-flex-pack: @justify;
+    justify-content: @justify;
+}
+
+// Packing Flex Lines
+// - applies to: multi-line flex containers
+// flex-start | flex-end | center | space-between | space-around | stretch
+.i-align-content(@align: stretch) {
+    -webkit-align-content: @align;
+    -ms-align-content: @align;
+    align-content: @align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch
+.i-align-items(@align: stretch) {
+    -webkit-align-items: @align;
+    -ms-align-items: @align;
+    align-items: @align;
+}
+
+// Cross-axis Alignment
+// - applies to: flex items
+// auto | flex-start | flex-end | center | baseline | stretch
+.i-align-self(@align: auto) {
+    -webkit-align-self: @align;
+    -ms-align-self: @align;
+    align-self: @align;
+}
+
+.i-opacity (@opacity: 0.5) {
+    @ie_opacity: @opacity * 100;
+    --webkit-opacity: @opacity;
+    --moz-opacity: @opacity;
+    opacity: @opacity;
+}
+
+.i-hover-bg-color (@color, @value: 5%) {
+    background-color: lighten(@color, @value);
+}
+.i-active-bg-color (@color, @value: 5%) {
+    background-color: darken(@color, @value);
+}
+.i-animation (@value) {
+    -webkit-animation: @value;
+    --o-animation: @value;
+    animation: @value;
+}
+.i-animation-delay (@value) {
+    -webkit-animation-delay: @value;
+    --o-animation-delay: @value;
+    animation-delay: @value;
+}
+.i-transition (@transition: 220ms ease-in-out) {
+    -webkit-transition:  @transition;
+    --moz-transition:    @transition;
+    --ms-transition:     @transition;
+    --o-transition:      @transition;
+    transition:          @transition;
+}
+.i-transition-property (@property: all) {
+    -webkit-transition-property:  @property;
+    --moz-transition-property:    @property;
+    --o-transition-property:      @property;
+    transition-property:          @property;
+}
+.i-transition-off () {
+    -webkit-transition:  none;
+    --moz-transition:    none;
+    --ms-transition:     none;
+    --o-transition:      color 0 ease-in;
+    transition:          none;
+}
+.i-transform (@string) {
+    -webkit-transform:   @string;
+    --moz-transform:     @string;
+    --ms-transform:      @string;
+    --o-transform:       @string;
+    transform:           @string;
+}
+.i-transform-scale(@factor) {
+    -webkit-transform:   scale(@factor);
+    --moz-transform:     scale(@factor);
+    --ms-transform:      scale(@factor);
+    --o-transform:       scale(@factor);
+    transform:           scale(@factor);
+}
+.i-box-sizing (@type: border-box) {
+    -webkit-box-sizing: @type;
+    --moz-box-sizing:   @type;
+    box-sizing:         @type;
+}
+.i-gradient-vertical (@direct, @startColor, @endColor) {
+    background-color: @startColor;
+    background: -webkit-gradient(linear, @direct top, @direct bottom, from(@startColor), to(@endColor));
+    background-image: -webkit-linear-gradient(@direct, @startColor, @endColor);
+    background-image: -moz-linear-gradient(@direct, @startColor, @endColor);
+    background-image: -ms-linear-gradient(@direct, @startColor, @endColor);
+    background-image: -o-linear-gradient(@direct, @startColor, @endColor);
+    .to_direct(@direct) when (@direct = top) {
+        background-image: linear-gradient('to bottom', @startColor, @endColor);
+    }
+    .to_direct(@direct) when (@direct = bottom) {
+        background-image: linear-gradient('to top', @startColor, @endColor);
+    }
+}
+.i-gradient-horizontal (@direct, @startColor, @endColor) {
+    background-color: @startColor;
+    background: -webkit-gradient(linear, @direct top, @direct top, from(@startColor), to(@endColor));
+    background-image: -webkit-linear-gradient(@direct, @startColor, @endColor);
+    background-image: -moz-linear-gradient(@direct, @startColor, @endColor);
+    background-image: -ms-linear-gradient(@direct, @startColor, @endColor);
+    background-image: -o-linear-gradient(@direct, @startColor, @endColor);
+    .to_direct(@direct) when (@direct = left) {
+        background-image: linear-gradient('to right', @startColor, @endColor);
+    }
+    .to_direct(@direct) when (@direct = right) {
+        background-image: linear-gradient('to left', @startColor, @endColor);
+    }
+}
+.i-triangle-up (@size, @color: ~'', @width: @size) {
+    width: 0;
+    height: 0;
+    border-bottom: @width solid @color;
+    border-right: @size solid transparent;
+    border-left: @size solid transparent;
+    border-top: 0 none;
+    display: inline-block;
+    vertical-align: middle;
+}
+.i-triangle-down (@size, @color: ~'', @width: @size) {
+    width: 0;
+    height: 0;
+    border-top: @width solid @color;
+    border-right: @size solid transparent;
+    border-left: @size solid transparent;
+    border-bottom: 0 none;
+    display: inline-block;
+    vertical-align: middle;
+}
+.i-triangle-left (@size, @color: ~'', @width: @size) {
+    width: 0;
+    height: 0;
+    border-right: @width solid @color;
+    border-top: @size solid transparent;
+    border-bottom: @size solid transparent;
+    border-left: 0 none;
+    display: inline-block;
+    vertical-align: middle;
+}
+.i-triangle-right (@size, @color: ~'', @width: @size) {
+    width: 0;
+    height: 0;
+    border-left: @width solid @color;
+    border-top: @size solid transparent;
+    border-bottom: @size solid transparent;
+    border-right: 0 none;
+    display: inline-block;
+    vertical-align: middle;
+}
+// ............................................................
+// .for
+
+.for(@i, @n) {.-each(@i)}
+.for(@n)     when (isnumber(@n)) {.for(1, @n)}
+.for(@i, @n) when not (@i = @n)  {
+    .for((@i + (@n - @i) / abs(@n - @i)), @n);
+}
+
+// ............................................................
+// .for-each
+
+.for(@array)   when (default()) {.for-impl_(length(@array))}
+.for-impl_(@i) when (@i > 1)    {.for-impl_((@i - 1))}
+.for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}
+

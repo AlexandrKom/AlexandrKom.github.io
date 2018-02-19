@@ -1,0 +1,21 @@
+.i-parallax-scroller {
+    &__holder {
+        top: 0;
+        left: 0;
+        position: fixed;
+        overflow: hidden;
+    }
+    &__section {
+        background-color: #fff;
+    }
+    &__tile {
+        visibility: hidden;
+        max-width: none;
+        -webkit-perspective: 1000;
+    }
+    &__holders-wrapper {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+    }
+}

@@ -1,0 +1,22 @@
+// -----------------------------------------------------------------------------
+// very basic styles.
+// -----------------------------------------------------------------------------
+
+* {
+  @include box-sizing(border-box);
+}
+
+*::before, *::after {
+  @include box-sizing(inherit);
+}
+
+body {
+  background-color: #fff;
+}
+
+a, a:hover {text-decoration: none; color: inherit;}
+
+
+.page-container {padding-top: 55px;}
+
+

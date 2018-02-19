@@ -1,0 +1,27 @@
+.l-float {
+    &_left {
+        float: left;
+    }
+    &_right {
+        float: right;
+    }
+    &_clear {
+        display: block;
+        clear: both;
+        height: 0px;
+        line-height: 0px;
+        font-size: 0px;
+        overflow: hidden;
+    }
+    &_clearfix {
+        &:before,
+        &:after {
+            display: table;
+            line-height: 0;
+            content: "";
+        }
+        &:after {
+            clear: both;
+        }
+    }
+}
